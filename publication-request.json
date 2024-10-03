@@ -1,7 +1,7 @@
 {
-    "package-id" : "{pid} -- ihe.domain.profile",
+    "package-id" : "{pid} -- ihe.pcc.pscc",
     "version" : "{version to release}",
-    "path" : "{path} -- https://profiles.ihe.net/Domain/Profile/1.0.0",
+    "path" : "{path} -- https://profiles.ihe.net/PCC/PSCc/1.0.0",
     "mode" : "milestone",
     "status" : "release",
     "sequence" : "Releases",
