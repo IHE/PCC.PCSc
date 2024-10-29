@@ -6,9 +6,9 @@ Description:    """
 The Paramedicine Summary of Care – Clinical Subset contains the patient’s medical history, paramedicine care information and interventions that are relevant to clinical care.
 """
 
-* templateId[+] = "1.3.6.1.4.1.19376.1.5.3.1.1.31.1"
-* templateId[+] = "1.3.6.1.4.1.19376.1.5.3.1.1.2"
-* templateId[+] = "1.3.6.1.4.1.19376.1.5.3.1.1.1"
+* templateId[+] = #1.3.6.1.4.1.19376.1.5.3.1.1.31.1
+* templateId[+] = #1.3.6.1.4.1.19376.1.5.3.1.1.2
+* templateId[+] = #1.3.6.1.4.1.19376.1.5.3.1.1.1
 * code = $loinc#67796-3 
 // TBD update 
 
