@@ -9,7 +9,7 @@ The Paramedicine Summary of Care – Clinical Subset contains the patient’s me
 * templateId[+] = #1.3.6.1.4.1.19376.1.5.3.1.1.31.1
 * templateId[+] = #1.3.6.1.4.1.19376.1.5.3.1.1.2
 * templateId[+] = #1.3.6.1.4.1.19376.1.5.3.1.1.1
-* code = $loinc#67796-3 
+* code = $loinc#77596-5
 // TBD update 
 
 * component.structuredBody 1..1 MS 
