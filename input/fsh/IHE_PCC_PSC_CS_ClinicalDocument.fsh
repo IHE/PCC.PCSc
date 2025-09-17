@@ -1,7 +1,7 @@
 Profile:        IHE_PCC_PSC_CS_ClinicalDocument
-Parent:         ClinicalDocument
+Parent:         http://hl7.org/cda/stds/core/StructureDefinition/ClinicalDocument
 Id:             IHE.PCC.PSC.CS.ClinicalDocument
-Title:          "IHE Paramedicine Summary of Care Clinical Subset Document"
+Title:          "IHE Paramedicine Summary of Care CDA Clinical Subset Document"
 Description:    """
 The Paramedicine Summary of Care – Clinical Subset contains the patient’s medical history, paramedicine care information and interventions that are relevant to clinical care.
 """
