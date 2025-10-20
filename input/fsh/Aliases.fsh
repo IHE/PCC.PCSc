@@ -7,6 +7,16 @@ Alias: $ICD10-CM = http://hl7.org/fhir/sid/icd-10-cm
 Alias: $ClinicalDocument = http://hl7.org/cda/stds/core/StructureDefinition/ClinicalDocument
 
 
+// IHE Sections 
+//Alias: $IHEMedicationsSection = http://hl7.org/cda/stds/core/StructureDefinition/ClinicalDocument
+
+
+
+
+// IHE Entries  
+//Alias: $Medications = http://hl7.org/cda/stds/core/StructureDefinition/Act
+
+
 // CDA Types
 Alias: $Act = http://hl7.org/cda/stds/core/StructureDefinition/Act
 Alias: $Author = http://hl7.org/cda/stds/core/StructureDefinition/Author
@@ -134,7 +144,7 @@ Alias: $TS = http://hl7.org/cda/stds/core/StructureDefinition/TS
 //Alias: $2.16.840.1.113883.1.11.11610   = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.1.11.11610
 //Alias: $2.16.840.1.113883.1.11.12212   = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.1.11.12212
 
-Alias: $ActStatus   = http://terminology.hl7.org/ValueSet/v3-ActStatus
+Alias: $ActStatus   = http://terminology.hl7.org/ValueSet/v3-ActStatus|3.0.0
 Alias: $ActPriority = http://terminology.hl7.org/ValueSet/v3-ActPriority
 
 
