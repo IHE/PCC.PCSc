@@ -9,7 +9,7 @@ The medications section shall contain a description of the relevant medications 
 //* ^identifier.system = "urn:ietf:rfc:3986"
 //* ^identifier.value = "urn:hl7ii:2.16.840.1.113883.10.20.22.2.1.1:2014-06-09"
 //* ^status = #draft
-* obeys shall-med-activity
+* obeys shall-med-entry
 * nullFlavor ^short = "If a required section contains no information, the @nullFlavor MAY be set to NI"
 * templateId ^slicing.discriminator[0].type = #value
 * templateId ^slicing.discriminator[=].path = "root"
@@ -47,3 +47,9 @@ The medications section shall contain a description of the relevant medications 
 //* entry[medications].substanceAdministration 1..
 //* entry[medications].substanceAdministration only $Medications
 //* entry[medications].substanceAdministration ^comment = "SHALL contain exactly one [1..1] Medications (identifier: oid:1.3.6.1.4.1.19376.1.5.3.1.4.7)."
+
+Invariant: shall-med-entry
+Description: "If section/@nullFlavor is not present, SHALL contain at least one Medication Entry"
+* severity = #error
+* expression = "nullFlavor.exists() or entry.where(substanceAdministration.hasTemplateIdOf('http://hl7.org/cda/us/ccda/StructureDefinition/MedicationActivity')).exists()"
+
