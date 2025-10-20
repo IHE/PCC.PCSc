@@ -1,6 +1,6 @@
 == Suppressed Messages ==
-# instructions for ignoreWarnings.txt https://confluence.hl7.org/pages/viewpage.action?pageId=66938614#ImplementationGuideParameters-ManagingWarningsandHints
-# IHE valueset that is not yet a real valueset
-Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
+# There has been a validator update since the underlying HL7 Clinical Document Architecture IG was published. There are a number of strucutre elements that were built using the [0], [=] method. SInce the publication, an new 'best practices' warning comes up indicating that the format of [0] should be replaced with [+]. Until the publication is updated with these edits, this profile will maintain this warning. 
+WARNING: Constraint failed: eld-24: 'pattern[x] should be used rather than fixed[x]' (defined in http://hl7.org/fhir/StructureDefinition/ElementDefinition) (Best Practice Recommendation)
+
 
 

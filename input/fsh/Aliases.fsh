@@ -4,26 +4,7 @@ Alias: $loinc = http://loinc.org
 Alias: $RxNorm = http://www.nlm.nih.gov/research/umls/rxnorm
 Alias: $ICD10 = http://hl7.org/fhir/sid/icd-10
 Alias: $ICD10-CM = http://hl7.org/fhir/sid/icd-10-cm
-
-//Alias: $RFC = urn:ietf:rfc:3986
-
 Alias: $ClinicalDocument = http://hl7.org/cda/stds/core/StructureDefinition/ClinicalDocument
-//Alias: $2.16.840.1.113883.1.11.16926 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.1.11.16926
-//Alias: $2.16.840.1.113883.11.20.9.20 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.20
-//Alias: $2.16.840.1.113883.1.11.12212 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.1.11.12212
-//Alias: $2.16.840.1.113883.1.11.19185 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.1.11.19185
-//Alias: $2.16.840.1.113883.4.642.2.575 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.4.642.2.575
-//Alias: $2.16.840.1.113762.1.4.1267.25 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1267.25
-//Alias: $2.16.840.1.113883.4.642.40.2.48.3 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.4.642.40.2.48.3
-//Alias: $2.16.840.1.113883.4.642.40.2.48.1 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.4.642.40.2.48.1
-//Alias: $2.16.840.1.113883.11.20.12.1 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.12.1
-//Alias: $2.16.840.1.113883.1.11.12249 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.1.11.12249
-//Alias: $2.16.840.1.113883.1.11.12199 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.1.11.12199
-//Alias: $2.16.840.1.114222.4.11.1066 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.1066
-//Alias: $2.16.840.1.113883.1.11.19601 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.1.11.19601
-//Alias: $2.16.840.1.113762.1.4.1099.30 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1099.30
-//Alias: $2.16.840.1.113762.1.4.1240.5 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1240.5
-//Alias: $2.16.840.1.113883.1.11.20.22 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.1.11.20.22
 
 
 // CDA Types
@@ -55,6 +36,41 @@ Alias: $ST = http://hl7.org/cda/stds/core/StructureDefinition/ST
 Alias: $SubstanceAdministration = http://hl7.org/cda/stds/core/StructureDefinition/SubstanceAdministration
 Alias: $Supply = http://hl7.org/cda/stds/core/StructureDefinition/Supply
 Alias: $TS = http://hl7.org/cda/stds/core/StructureDefinition/TS
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Alias: $RFC = urn:ietf:rfc:3986
+
+
+//Alias: $2.16.840.1.113883.1.11.16926 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.1.11.16926
+//Alias: $2.16.840.1.113883.11.20.9.20 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.20
+//Alias: $2.16.840.1.113883.1.11.12212 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.1.11.12212
+//Alias: $2.16.840.1.113883.1.11.19185 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.1.11.19185
+//Alias: $2.16.840.1.113883.4.642.2.575 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.4.642.2.575
+//Alias: $2.16.840.1.113762.1.4.1267.25 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1267.25
+//Alias: $2.16.840.1.113883.4.642.40.2.48.3 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.4.642.40.2.48.3
+//Alias: $2.16.840.1.113883.4.642.40.2.48.1 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.4.642.40.2.48.1
+//Alias: $2.16.840.1.113883.11.20.12.1 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.12.1
+//Alias: $2.16.840.1.113883.1.11.12249 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.1.11.12249
+//Alias: $2.16.840.1.113883.1.11.12199 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.1.11.12199
+//Alias: $2.16.840.1.114222.4.11.1066 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.1066
+//Alias: $2.16.840.1.113883.1.11.19601 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.1.11.19601
+//Alias: $2.16.840.1.113762.1.4.1099.30 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1099.30
+//Alias: $2.16.840.1.113762.1.4.1240.5 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1240.5
+//Alias: $2.16.840.1.113883.1.11.20.22 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.1.11.20.22
+
+
+
 
 // VSAC ValueSets
 //Alias: $2.16.840.1.113762.1.4.1        = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1
