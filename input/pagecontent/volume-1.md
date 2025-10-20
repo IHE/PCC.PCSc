@@ -6,7 +6,7 @@
 <a name="actors-and-transactions"> </a>
 
 ## 1:X.1 PSCc Actors, Transactions, and Content Modules
-This section defines the actors, transactions, and/or content modules in this implementation guide. General definitions of actors are given in the Technical Frameworks General Introduction Appendix A. IHE Transactions can be found in the Technical Frameworks General Introduction Appendix B. Both appendices are located at https://profiles.ihe.net/GeneralIntro/.
+This section defines the actors, transactions, and/or content modules in this implementation guide. General definitions of actors are given in the Technical Frameworks General Introduction Appendix A. IHE Transactions can be found in the Technical Frameworks General Introduction Appendix B. Both appendices are located at https://profiles.ihe.net/GeneralIntro/.   
 
 ### 1:X.1.1 Actors
 The actors in this profile are described in more detail in the sections below.
@@ -17,7 +17,7 @@ The actors in this profile are described in more detail in the sections below.
 
 #### 1:X.1.1.1 Content Creator
 
-The [PSCc Content Creator](https://profiles.ihe.net/ITI/sIPS/pcc.html#31-document-sharing-pcc-1) creates the [PSCc content](StructureDefinition-IHE.PCC.mAPS.Composition.html) and shares it using one of the methods defined in the [IHE Document Sharing Health Information Exchange](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html).
+The [PSCc Content Creator](https://profiles.ihe.net/ITI/sIPS/pcc.html#31-document-sharing-pcc-1) creates the [PSCc content](StructureDefinition-IHE.PCC.MD.ClinicalDocument.MedicalDocument.html) and shares it using one of the methods defined in the [IHE Document Sharing Health Information Exchange](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html).
 **TODO Replace LINKS**
 
 <a name="Content-Consumer"> </a>
@@ -31,7 +31,7 @@ The [PSCc Content Consumer](https://profiles.ihe.net/ITI/sIPS/pcc.html#31-docume
 **TODO Still TEMPLATE**
 ### 1:X.1.2 mAPS Content
 
-The Content Creator and Content Consumer share the [APS content](StructureDefinition-IHE.PCC.mAPS.Composition.html) using one of the methods defined in the [IHE Document Sharing Health Information Exchange](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html).
+The Content Creator and Content Consumer share the [APS content](StructureDefinition-IHE.PCC.MD.ClinicalDocument.MedicalDocument.html) using one of the methods defined in the [IHE Document Sharing Health Information Exchange](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html).
 
 <a name="actor-options"> </a>
 
