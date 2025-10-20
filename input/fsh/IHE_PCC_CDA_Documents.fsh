@@ -26,7 +26,7 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * templateId ^slicing.discriminator[+].type = #value
 * templateId ^slicing.discriminator[=].path = "extension"
 * templateId ^slicing.rules = #open
-* templateId contains 
+* templateId contains  
      uv-realm 1..1 and 
      us-realm 0..1
 * templateId[uv-realm].root 1..
