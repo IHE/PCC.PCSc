@@ -32,7 +32,7 @@ copyrightYear: 2023+
 
 
 dependencies:
-  hl7.cda.uv.core: current 
+  hl7.cda.uv.core: 2.0.1-sd
   # http://hl7.org/cda/stds/core/ImplementationGuide/hl7.cda.uv.core
 
 parameters:  # see https://confluence.hl7.org/display/CDA/IG+Publisher+Basics+for+CDA+IG+Authors
@@ -40,6 +40,7 @@ parameters:  # see https://confluence.hl7.org/display/CDA/IG+Publisher+Basics+fo
     - input/resources
     - fsh-generated/resources
     - input/examples
+    - input/pagecontent
 #  path-pages:
 #    - input/pagecontent
 #    - fsh-generated/includes

@@ -21,7 +21,7 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * typeId ^comment = "SHALL contain exactly one [1..1] typeId (CONF:4537-5361)."
 * typeId.root ^comment = "This typeId SHALL contain exactly one [1..1] @root=\"2.16.840.1.113883.1.3\" (CONF:4537-5250)."
 * typeId.extension ^comment = "This typeId SHALL contain exactly one [1..1] @extension=\"POCD_HD000040\" (CONF:4537-5251)."
-* templateId ^slicing.discriminator[0].type = #value
+* templateId ^slicing.discriminator[+].type = #value
 * templateId ^slicing.discriminator[=].path = "root"
 * templateId ^slicing.discriminator[+].type = #value
 * templateId ^slicing.discriminator[=].path = "extension"
@@ -31,6 +31,8 @@ Note: Starting from template of US-realm header and deconstraining US specific  
      us-realm 0..1
 * templateId[uv-realm].root 1..
 * templateId[uv-realm].root = "1.3.6.1.4.1.19376.1.5.3.1.1.1"
+* templateId[uv-realm].extension 1..
+* templateId[uv-realm].extension = "2025-10-20"
 * templateId[us-realm].root 1..
 * templateId[us-realm].root = "2.16.840.1.113883.10.20.22.1.1"
 * templateId[us-realm].extension 1..
@@ -68,51 +70,51 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * recordTarget.patientRole.patient.name 1..
 * recordTarget.patientRole.patient.birthTime 1..
 * recordTarget.patientRole.patient.birthTime obeys ts-shall-year and ts-should-day
-* recordTarget.patientRole.patient.birthTime ^extension[0].url = "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement"
-* recordTarget.patientRole.patient.birthTime ^extension[=].valueBoolean = true
-* recordTarget.patientRole.patient.birthTime ^short = "𝗨𝗦𝗖𝗗𝗜: Date of Birth - **MAY** be precise to the minute (CONF:4537-32418) (For cases where information about newborn's time of birth needs to be captured)"
-* recordTarget.patientRole.patient.birthTime ^comment = "This patient SHALL contain exactly one [1..1] birthTime (CONF:4537-5298)."
-* recordTarget.patientRole.patient.sdtcDeceasedInd ^short = "sdtc:deceasedInd"
-* recordTarget.patientRole.patient.sdtcDeceasedInd ^comment = "This patient MAY contain zero or one [0..1] sdtc:deceasedInd (CONF:4537-32990)."
+//* recordTarget.patientRole.patient.birthTime ^extension[+].url = "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement"
+//* recordTarget.patientRole.patient.birthTime ^extension[=].valueBoolean = true
+//* recordTarget.patientRole.patient.birthTime ^short = "𝗨𝗦𝗖𝗗𝗜: Date of Birth - **MAY** be precise to the minute (CONF:4537-32418) (For cases where information about newborn's time of birth needs to be captured)"
+//* recordTarget.patientRole.patient.birthTime ^comment = "This patient SHALL contain exactly one [1..1] birthTime (CONF:4537-5298)."
+//* recordTarget.patientRole.patient.sdtcDeceasedInd ^short = "sdtc:deceasedInd"
+//* recordTarget.patientRole.patient.sdtcDeceasedInd ^comment = "This patient MAY contain zero or one [0..1] sdtc:deceasedInd (CONF:4537-32990)."
 * recordTarget.patientRole.patient.sdtcDeceasedTime obeys should-value-att and ts-shall-year and ts-should-day
-* recordTarget.patientRole.patient.sdtcDeceasedTime ^extension[0].url = "http://hl7.org/fhir/tools/StructureDefinition/xml-namespace"
+* recordTarget.patientRole.patient.sdtcDeceasedTime ^extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/xml-namespace"
 * recordTarget.patientRole.patient.sdtcDeceasedTime ^extension[=].valueUri = "urn:hl7-org:sdtc"
 * recordTarget.patientRole.patient.sdtcDeceasedTime ^extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/xml-name"
 * recordTarget.patientRole.patient.sdtcDeceasedTime ^extension[=].valueString = "deceasedTime"
-* recordTarget.patientRole.patient.sdtcDeceasedTime ^extension[+].url = "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement"
-* recordTarget.patientRole.patient.sdtcDeceasedTime ^extension[=].valueBoolean = true
-* recordTarget.patientRole.patient.sdtcDeceasedTime ^short = "𝗨𝗦𝗖𝗗𝗜: Date of Death"
-* recordTarget.patientRole.patient.sdtcDeceasedTime ^comment = "This patient MAY contain zero or one [0..1] sdtc:deceasedTime (CONF:4537-32988)."
+//* recordTarget.patientRole.patient.sdtcDeceasedTime ^extension[+].url = "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement"
+//* recordTarget.patientRole.patient.sdtcDeceasedTime ^extension[=].valueBoolean = true
+//* recordTarget.patientRole.patient.sdtcDeceasedTime ^short = "𝗨𝗦𝗖𝗗𝗜: Date of Death"
+//* recordTarget.patientRole.patient.sdtcDeceasedTime ^comment = "This patient MAY contain zero or one [0..1] sdtc:deceasedTime (CONF:4537-32988)."
 * recordTarget.patientRole.patient.maritalStatusCode from $2.16.840.1.113883.1.11.12212 (required)
 * recordTarget.patientRole.patient.maritalStatusCode ^comment = "This patient SHOULD contain zero or one [0..1] maritalStatusCode, which SHALL be selected from ValueSet Marital Status urn:oid:2.16.840.1.113883.1.11.12212 DYNAMIC (CONF:4537-5303)."
 * recordTarget.patientRole.patient.religiousAffiliationCode from $2.16.840.1.113883.1.11.19185 (required)
 * recordTarget.patientRole.patient.religiousAffiliationCode ^comment = "This patient MAY contain zero or one [0..1] religiousAffiliationCode, which SHALL be selected from ValueSet Religious Affiliation urn:oid:2.16.840.1.113883.1.11.19185 DYNAMIC (CONF:4537-5317)."
 * recordTarget.patientRole.patient.raceCode 0..
 * recordTarget.patientRole.patient.raceCode from $2.16.840.1.113883.4.642.2.575 (example)
-* recordTarget.patientRole.patient.raceCode ^extension[0].url = "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement"
-* recordTarget.patientRole.patient.raceCode ^extension[=].valueBoolean = true
-* recordTarget.patientRole.patient.raceCode ^short = "𝗨𝗦𝗖𝗗𝗜: Race"
+//* recordTarget.patientRole.patient.raceCode ^extension[+].url = "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement"
+//* recordTarget.patientRole.patient.raceCode ^extension[=].valueBoolean = true
+//* recordTarget.patientRole.patient.raceCode ^short = "𝗨𝗦𝗖𝗗𝗜: Race"
 * recordTarget.patientRole.patient.sdtcRaceCode from $2.16.840.1.113762.1.4.1267.25 (example)
-* recordTarget.patientRole.patient.sdtcRaceCode ^extension[0].url = "http://hl7.org/fhir/tools/StructureDefinition/xml-namespace"
+* recordTarget.patientRole.patient.sdtcRaceCode ^extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/xml-namespace"
 * recordTarget.patientRole.patient.sdtcRaceCode ^extension[=].valueUri = "urn:hl7-org:sdtc"
 * recordTarget.patientRole.patient.sdtcRaceCode ^extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/xml-name"
 * recordTarget.patientRole.patient.sdtcRaceCode ^extension[=].valueString = "raceCode"
-* recordTarget.patientRole.patient.sdtcRaceCode ^extension[+].url = "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement"
-* recordTarget.patientRole.patient.sdtcRaceCode ^extension[=].valueBoolean = true
-* recordTarget.patientRole.patient.sdtcRaceCode ^short = "𝗨𝗦𝗖𝗗𝗜: Race - The sdtc:raceCode is only used to record additional values when the patient has indicated multiple races or additional race detail beyond the five categories required for Meaningful Use Stage 2. The prefix sdtc: SHALL be bound to the namespace “urn:hl7-org:sdtc”. The use of the namespace provides a necessary extension to CDA R2 for the use of the additional raceCode elements."
+//* recordTarget.patientRole.patient.sdtcRaceCode ^extension[+].url = "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement"
+//* recordTarget.patientRole.patient.sdtcRaceCode ^extension[=].valueBoolean = true
+//* recordTarget.patientRole.patient.sdtcRaceCode ^short = "𝗨𝗦𝗖𝗗𝗜: Race - The sdtc:raceCode is only used to record additional values when the patient has indicated multiple races or additional race detail beyond the five categories required for Meaningful Use Stage 2. The prefix sdtc: SHALL be bound to the namespace “urn:hl7-org:sdtc”. The use of the namespace provides a necessary extension to CDA R2 for the use of the additional raceCode elements."
 * recordTarget.patientRole.patient.ethnicGroupCode 0..
 * recordTarget.patientRole.patient.ethnicGroupCode from $2.16.840.1.113883.4.642.40.2.48.3 (example)
-* recordTarget.patientRole.patient.ethnicGroupCode ^extension[0].url = "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement"
-* recordTarget.patientRole.patient.ethnicGroupCode ^extension[=].valueBoolean = true
-* recordTarget.patientRole.patient.ethnicGroupCode ^short = "𝗨𝗦𝗖𝗗𝗜: Ethnicity"
+//* recordTarget.patientRole.patient.ethnicGroupCode ^extension[+].url = "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement"
+//* recordTarget.patientRole.patient.ethnicGroupCode ^extension[=].valueBoolean = true
+//* recordTarget.patientRole.patient.ethnicGroupCode ^short = "𝗨𝗦𝗖𝗗𝗜: Ethnicity"
 * recordTarget.patientRole.patient.sdtcEthnicGroupCode from $2.16.840.1.113883.4.642.40.2.48.1 (example)
-* recordTarget.patientRole.patient.sdtcEthnicGroupCode ^extension[0].url = "http://hl7.org/fhir/tools/StructureDefinition/xml-namespace"
+* recordTarget.patientRole.patient.sdtcEthnicGroupCode ^extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/xml-namespace"
 * recordTarget.patientRole.patient.sdtcEthnicGroupCode ^extension[=].valueUri = "urn:hl7-org:sdtc"
 * recordTarget.patientRole.patient.sdtcEthnicGroupCode ^extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/xml-name"
 * recordTarget.patientRole.patient.sdtcEthnicGroupCode ^extension[=].valueString = "ethnicGroupCode"
-* recordTarget.patientRole.patient.sdtcEthnicGroupCode ^extension[+].url = "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement"
-* recordTarget.patientRole.patient.sdtcEthnicGroupCode ^extension[=].valueBoolean = true
-* recordTarget.patientRole.patient.sdtcEthnicGroupCode ^short = "𝗨𝗦𝗖𝗗𝗜: Ethnicity"
+//* recordTarget.patientRole.patient.sdtcEthnicGroupCode ^extension[+].url = "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement"
+//* recordTarget.patientRole.patient.sdtcEthnicGroupCode ^extension[=].valueBoolean = true
+//* recordTarget.patientRole.patient.sdtcEthnicGroupCode ^short = "𝗨𝗦𝗖𝗗𝗜: Ethnicity"
 * recordTarget.patientRole.patient.guardian obeys should-us-code and should-us-addr and should-us-telecom
 * recordTarget.patientRole.patient.guardian ^comment = "This patient MAY contain zero or more [0..*] guardian (CONF:4537-5325)."
 * recordTarget.patientRole.patient.guardian.code from $2.16.840.1.113883.11.20.12.1 (required)
@@ -129,13 +131,13 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * recordTarget.patientRole.patient.birthplace ^comment = "This patient MAY contain zero or one [0..1] birthplace (CONF:4537-5395)."
 * recordTarget.patientRole.patient.birthplace.place ^comment = "The birthplace, if present, SHALL contain exactly one [1..1] place (CONF:4537-5396)."
 * recordTarget.patientRole.patient.birthplace.place.addr 1..
-* recordTarget.patientRole.patient.birthplace.place.addr obeys 4537-5402 and 4537-5403 and should-country
+* recordTarget.patientRole.patient.birthplace.place.addr obeys should-country
 * recordTarget.patientRole.patient.birthplace.place.addr ^comment = "This place SHALL contain exactly one [1..1] addr (CONF:4537-5397)."
 * recordTarget.patientRole.patient.birthplace.place.addr.item.country from Country2 (example)
 * recordTarget.patientRole.patient.languageCommunication obeys should-proficiencyLevelCode and should-preferenceInd
-* recordTarget.patientRole.patient.languageCommunication ^extension[0].url = "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement"
-* recordTarget.patientRole.patient.languageCommunication ^extension[=].valueBoolean = true
-* recordTarget.patientRole.patient.languageCommunication ^short = "𝗨𝗦𝗖𝗗𝗜: Preferred Language"
+//* recordTarget.patientRole.patient.languageCommunication ^extension[+].url = "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement"
+//* recordTarget.patientRole.patient.languageCommunication ^extension[=].valueBoolean = true
+//* recordTarget.patientRole.patient.languageCommunication ^short = "𝗨𝗦𝗖𝗗𝗜: Preferred Language"
 * recordTarget.patientRole.patient.languageCommunication.languageCode 1..
 * recordTarget.patientRole.patient.languageCommunication.languageCode from Languages (required)
 * recordTarget.patientRole.patient.languageCommunication.modeCode from $2.16.840.1.113883.1.11.12249 (required)
@@ -162,7 +164,7 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * author.time MS
 * author.assignedAuthor obeys 4537-16790 and may-id-npi and should-us-code
 * author.assignedAuthor ^comment = "Such authors SHALL contain exactly one [1..1] assignedAuthor (CONF:4537-5448)."
-* author.assignedAuthor.id ^slicing.discriminator[0].type = #value
+* author.assignedAuthor.id ^slicing.discriminator[+].type = #value
 * author.assignedAuthor.id ^slicing.discriminator[=].path = "root"
 * author.assignedAuthor.id ^slicing.rules = #open
 * author.assignedAuthor.id ^comment = "This assignedAuthor SHOULD contain zero or one [0..1] id (CONF:4537-32882) such that it, This assignedAuthor SHALL contain at least one [1..*] id (CONF:4537-5449)."
@@ -212,7 +214,7 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * dataEnterer.assignedEntity.assignedPerson 1..
 * dataEnterer.assignedEntity.assignedPerson ^comment = "This assignedEntity SHALL contain exactly one [1..1] assignedPerson (CONF:4537-5469)."
 * dataEnterer.assignedEntity.assignedPerson.name 1..
-* informant ^slicing.discriminator[0].type = #exists
+* informant ^slicing.discriminator[+].type = #exists
 * informant ^slicing.discriminator[=].path = "relatedEntity"
 * informant ^slicing.discriminator[+].type = #exists
 * informant ^slicing.discriminator[=].path = "assignedEntity"
@@ -376,77 +378,6 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * componentOf.encompassingEncounter.responsibleParty.assignedEntity ^comment = "The responsibleParty, if present, SHALL contain exactly one [1..1] assignedEntity (CONF:1198-32904)."
 
 
-
-
-
-//* templateId 1..* MS
-//* templateId[+].root =  "urn:oid:1.3.6.1.4.1.19376.1.5.3.1.1.1"
-// US Realm * templateId[+] = "2.16.840.1.113883.10.20.3"
-
-
-//* typeId = $loinc#2.16.840.1.113883.6.1
-//* typeId MS
-//* templateId MS 
-//uniqueId Required 
-//* id MS
-// The uniqueId can be formatted using the following XPath expression, where $docID in the expression below represents the identifier. concat($docID/@root,"^", $docID/@extension)
-// typeCode Required 
-// Class code R
-//* code MS 
-// The typeCode should be mapped from the ClinicalDocument/code element to a set of document type codes configured in the affinity domain. One suggested coding system to use for typeCode is LOINC, in which case the mapping step can be omitted.
-// typeCodeDisplay Name Required
-//* code.@displayName 1..1 MS 
-//Title Optional
-//* sdtcStatusCode 1..1 MS
-// is this the same as availability status?
-//creation time R
-//* effectiveTime MS
-// COnfidentiality code R
-//* confidentialityCode MS
-//* languageCode MS
-//* setId
-//* versionNumber 	
-//* copyTimes
-
-// sourcePatientInfo Required
-//* recordTarget MS
-// The sourcePatientInfo metadata element can be assembled from various components of the patientRole element in the clinical document.
-// sourcePatientId Required
-//* recordTarget.patientRole MS
-//* recordTarget.patientRole.id MS
-// The patientId can be formatted using the following XPath expression, where $patID in the expression below represents the appropriate identifier. concat($patID/@extension,"^^^&", $patID/@root, "&ISO")
-
-// Author Insititution is required If nown IHE R2
-//* author MS
-//* author.assignedAuthor.representedOrganization.name MS 
-// how do we model down to that level?
-// Author Person is required If nown IHE R2
-//* author.assignedAuthor.assignedPerson MS 
-// Author Role R2
-// Author Specialty R2
-// how do we model down to that level?
-
-//* dataEnterer
-//* informant
-//* custodian
-//* informationRecipient 	
-//* legalAuthenticator
-//* authenticator
-//* participant
-//* inFulfillmentOf
-
-// serviceStopTime R2 
-//* documentationOf MS 
-// Times specified in clinical documents may be specified with a precision in fractional sections, and may contain a time zone offset. In the XDS Metadata, it can be precise to the second, and is always given in UTC, so the timezone offset if present must be added to the current time to obtain the UTC time.
-//* documentationOf.serviceEvent MS 
-//* documentationOf.serviceEvent.effectiveTime MS 
-
-//* relatedDocument
-//* authorization
-//* componentOf
-//* component
-// where does Entry uuid go? (required)
-
 // clinical docuent Header elements
 // * @classCode
 //* @moodCode
@@ -564,16 +495,6 @@ Invariant: should-us-telecom
 Description: "SHOULD contain telecom"
 * severity = #warning
 * expression = "telecom.exists()"
-
-Invariant: 4537-5402
-Description: "If country is US, this addr **SHALL** contain exactly one [1..1] state, which **SHALL** be selected from ValueSet US Core USPS State *DYNAMIC* (CONF:4537-5402)."
-* severity = #error
-* expression = "nullFlavor.exists() or (item.country.exists() and item.country.xmlText != 'US' and item.country.xmlText != 'USA') or item.state.exists(nullFlavor.exists() or xmlText.memberOf('http://terminology.hl7.org/ValueSet/USPS-State'))"
-
-Invariant: 4537-5403
-Description: "If country is US, this addr **MAY** contain zero or one [0..1] postalCode, which **SHALL** be selected from ValueSet PostalCode urn:oid:2.16.840.1.113883.3.88.12.80.2 *DYNAMIC* (CONF:4537-5403)."
-* severity = #warning
-* expression = "nullFlavor.exists() or (item.country.exists() and item.country.xmlText != 'US' and item.country.xmlText != 'USA') or item.postalCode.empty() or item.postalCode.exists(nullFlavor.exists() or xmlText.matches('[0-9]{5}(-[0-9]{4})?'))"
 
 Invariant: should-country
 Description: "SHOULD contain country"
