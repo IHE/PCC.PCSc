@@ -32,19 +32,22 @@ Title:          "IHE Medical Document CDA"
 Description:    """
 This section defines the base set of constraints used by almost all medical document profiles described in the PCC Technical Framework.
 """
-// Class ode R
-* @classCode MS 
-// Class code diplay name R
+
+* templateId 1..* MS
+* templateId[+] = "1.3.6.1.4.1.19376.1.5.3.1.1.1"  
+// US Realm * templateId[+] = "2.16.840.1.113883.10.20.3"
+//* typeId = $loinc#2.16.840.1.113883.6.1
 * typeId MS
 * templateId MS 
 //uniqueId Required 
 * id MS
 // The uniqueId can be formatted using the following XPath expression, where $docID in the expression below represents the identifier. concat($docID/@root,"^", $docID/@extension)
 // typeCode Required 
+// Class code R
 * code MS 
 // The typeCode should be mapped from the ClinicalDocument/code element to a set of document type codes configured in the affinity domain. One suggested coding system to use for typeCode is LOINC, in which case the mapping step can be omitted.
 // typeCodeDisplay Name Required
-* code.@displayName 1..1 MS 
+//* code.@displayName 1..1 MS 
 //Title Optional
 * sdtcStatusCode 1..1 MS
 // is this the same as availability status?
@@ -55,7 +58,7 @@ This section defines the base set of constraints used by almost all medical docu
 * languageCode MS
 //* setId
 //* versionNumber 	
-//* copyTime
+//* copyTimes
 
 // sourcePatientInfo Required
 * recordTarget MS
@@ -132,15 +135,15 @@ This section defines the base set of constraints used by almost all medical docu
 
 
 
-* templateId[+] = "1.3.6.1.4.1.19376.1.5.3.1.1.1"
+//* templateId[+] = "1.3.6.1.4.1.19376.1.5.3.1.1.1"
 // US Realm * templateId[+] = "2.16.840.1.113883.10.20.3"
 //* typeId = $loinc#2.16.840.1.113883.6.1
 
 
 
-* confidentialityCode MS
-  * codeSystem = "2.16.840.1.113883.5.25"
-  * codeSystemName = "Confidentiality"
+//* confidentialityCode MS
+//  * codeSystem = "2.16.840.1.113883.5.25"
+//  * codeSystemName = "Confidentiality"
 // TODO FInish metadata requirements if needed. need to figure out if the item is 1..1 do we need to make it MS? 
 //* author 
 
