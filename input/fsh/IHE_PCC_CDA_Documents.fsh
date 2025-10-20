@@ -62,7 +62,7 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * recordTarget.patientRole.telecom 1..
 * recordTarget.patientRole.telecom obeys should-use
 * recordTarget.patientRole.telecom.use ..1
- recordTarget.patientRole.patient 1..
+* recordTarget.patientRole.patient 1..
 * recordTarget.patientRole.patient obeys 4537-32993 and 4537-21000 and should-maritalStatusCode and should-us-languageCommunication
 * recordTarget.patientRole.patient ^comment = "This patientRole SHALL contain exactly one [1..1] patient (CONF:4537-5283)."
 * recordTarget.patientRole.patient.name 1..
