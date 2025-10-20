@@ -1,6 +1,6 @@
-Profile: IHEMedicationsSection
+Profile: IHE_Medications_Section
 Parent: $Section
-Id: IHEMedicationsSection
+Id: IHE.Medications.Section
 Title: "IHE Medications Section"
 Description: """
 The medications section shall contain a description of the relevant medications for the patient, e.g., an ambulatory prescription list. It shall include entries for medications as described in the Entry Content Module.
@@ -11,7 +11,7 @@ The medications section shall contain a description of the relevant medications 
 //* ^status = #draft
 * obeys shall-med-entry
 * nullFlavor ^short = "If a required section contains no information, the @nullFlavor MAY be set to NI"
-* templateId ^slicing.discriminator[0].type = #value
+* templateId ^slicing.discriminator[+].type = #value
 * templateId ^slicing.discriminator[=].path = "root"
 * templateId ^slicing.discriminator[+].type = #value
 * templateId ^slicing.discriminator[=].path = "extension"
@@ -38,7 +38,7 @@ The medications section shall contain a description of the relevant medications 
 * code.codeSystem = "2.16.840.1.113883.6.1"
 * title 1..
 * text 1..
-//* entry ^slicing.discriminator[0].type = #profile
+//* entry ^slicing.discriminator[+].type = #profile
 //* entry ^slicing.discriminator[=].path = "substanceAdministration"
 //* entry ^slicing.rules = #open
 //* entry ^short = "If section/@nullFlavor is not present:"

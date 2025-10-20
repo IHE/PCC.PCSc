@@ -11,7 +11,7 @@ Usage: #definition
 * description = "The PSCc[Content Creator](volume-1.html#Content-Creator)"
 * kind = #requirements
 * fhirVersion = #4.0.1
-* format[0] = #application/fhir+xml
+* format[+] = #application/fhir+xml
 * format[+] = #application/fhir+json
 * document[+].mode = #producer 
 * document[=].profile = Canonical(IHE_PCC_MedicalDocument)
@@ -29,7 +29,7 @@ Usage: #definition
 * description = "The PSCc[Content Consumer](volume-1.html#Content-Consumer)"
 * kind = #requirements
 * fhirVersion = #4.0.1
-* format[0] = #application/fhir+xml
+* format[+] = #application/fhir+xml
 * format[+] = #application/fhir+json
 * document[+].mode = #producer 
 * document[=].profile = Canonical(IHE_PCC_MedicalDocument)
