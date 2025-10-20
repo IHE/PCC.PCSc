@@ -1,30 +1,3 @@
-//Profile:        IHE_PCC_PSC_CS_ClinicalDocument_MedicalSummary
-//Parent:         http://hl7.org/cda/stds/core/StructureDefinition/ClinicalDocument
-//Id:             IHE.PCC.PSC.CS.ClinicalDocument.MedicalSummary
-//Title:          "IHE Paramedicine Summary of Care CDA Clinical Subset Document"
-//Description:    """
-//The Paramedicine Summary of Care – Clinical Subset contains the patient’s medical history, paramedicine care information and interventions that are relevant to clinical care.
-//"""
-
-//* templateId[+] = "1.3.6.1.4.1.19376.1.5.3.1.1.31.1"
-//* templateId[+] = "1.3.6.1.4.1.19376.1.5.3.1.1.2"
-//* templateId[+] = "1.3.6.1.4.1.19376.1.5.3.1.1.1"
-//* code = $loinc#18842-5
-// TBD update 
-
-//* component.structuredBody 1..1 MS 
-
-//* component.structuredBody.component ^slicing.discriminator.type = #pattern
-//* component.structuredBody.component ^slicing.discriminator.path = "code"
-//* component.structuredBody.component ^slicing.rules = #open
-//* component.structuredBody.component ^slicing.description = "Paramedicine Summary of Care CDA Clinical Subset Sections"
-//* component.structuredBody.component ^slicing.ordered = false
-//* component.structuredBody.component contains 
-//  sectionDetailedChiefComplaint  1..1 MS and
-//  sectionDetailedChiefComplaint  1..1 MS and
-
-
-
 Profile:        IHE_PCC_MedicalDocument_ClinicalDocument
 Parent:         http://hl7.org/cda/stds/core/StructureDefinition/ClinicalDocument
 Id:             IHE.PCC.MD.ClinicalDocument.MedicalDocument 
@@ -37,43 +10,43 @@ This section defines the base set of constraints used by almost all medical docu
 * templateId[+] = "1.3.6.1.4.1.19376.1.5.3.1.1.1"  
 // US Realm * templateId[+] = "2.16.840.1.113883.10.20.3"
 //* typeId = $loinc#2.16.840.1.113883.6.1
-* typeId MS
-* templateId MS 
+//* typeId MS
+//* templateId MS 
 //uniqueId Required 
-* id MS
+//* id MS
 // The uniqueId can be formatted using the following XPath expression, where $docID in the expression below represents the identifier. concat($docID/@root,"^", $docID/@extension)
 // typeCode Required 
 // Class code R
-* code MS 
+//* code MS 
 // The typeCode should be mapped from the ClinicalDocument/code element to a set of document type codes configured in the affinity domain. One suggested coding system to use for typeCode is LOINC, in which case the mapping step can be omitted.
 // typeCodeDisplay Name Required
 //* code.@displayName 1..1 MS 
 //Title Optional
-* sdtcStatusCode 1..1 MS
+//* sdtcStatusCode 1..1 MS
 // is this the same as availability status?
 //creation time R
-* effectiveTime MS
+//* effectiveTime MS
 // COnfidentiality code R
-* confidentialityCode MS
-* languageCode MS
+//* confidentialityCode MS
+//* languageCode MS
 //* setId
 //* versionNumber 	
 //* copyTimes
 
 // sourcePatientInfo Required
-* recordTarget MS
+//* recordTarget MS
 // The sourcePatientInfo metadata element can be assembled from various components of the patientRole element in the clinical document.
 // sourcePatientId Required
-* recordTarget.patientRole MS
-* recordTarget.patientRole.id MS
+//* recordTarget.patientRole MS
+//* recordTarget.patientRole.id MS
 // The patientId can be formatted using the following XPath expression, where $patID in the expression below represents the appropriate identifier. concat($patID/@extension,"^^^&", $patID/@root, "&ISO")
 
 // Author Insititution is required If nown IHE R2
-* author MS
-* author.assignedAuthor.representedOrganization.name MS 
+//* author MS
+//* author.assignedAuthor.representedOrganization.name MS 
 // how do we model down to that level?
 // Author Person is required If nown IHE R2
-* author.assignedAuthor.assignedPerson MS 
+//* author.assignedAuthor.assignedPerson MS 
 // Author Role R2
 // Author Specialty R2
 // how do we model down to that level?
@@ -88,10 +61,10 @@ This section defines the base set of constraints used by almost all medical docu
 //* inFulfillmentOf
 
 // serviceStopTime R2 
-* documentationOf MS 
+//* documentationOf MS 
 // Times specified in clinical documents may be specified with a precision in fractional sections, and may contain a time zone offset. In the XDS Metadata, it can be precise to the second, and is always given in UTC, so the timezone offset if present must be added to the current time to obtain the UTC time.
-* documentationOf.serviceEvent MS 
-* documentationOf.serviceEvent.effectiveTime MS 
+//* documentationOf.serviceEvent MS 
+//* documentationOf.serviceEvent.effectiveTime MS 
 
 //* relatedDocument
 //* authorization
@@ -131,6 +104,39 @@ This section defines the base set of constraints used by almost all medical docu
 //* authorization
 //* componentOf
 //* component
+
+
+
+
+
+
+
+
+
+//Profile:        IHE_PCC_PSC_CS_ClinicalDocument_MedicalSummary
+//Parent:         http://hl7.org/cda/stds/core/StructureDefinition/ClinicalDocument
+//Id:             IHE.PCC.PSC.CS.ClinicalDocument.MedicalSummary
+//Title:          "IHE Paramedicine Summary of Care CDA Clinical Subset Document"
+//Description:    """
+//The Paramedicine Summary of Care – Clinical Subset contains the patient’s medical history, paramedicine care information and interventions that are relevant to clinical care.
+//"""
+
+//* templateId[+] = "1.3.6.1.4.1.19376.1.5.3.1.1.31.1"
+//* templateId[+] = "1.3.6.1.4.1.19376.1.5.3.1.1.2"
+//* templateId[+] = "1.3.6.1.4.1.19376.1.5.3.1.1.1"
+//* code = $loinc#18842-5
+// TBD update 
+
+//* component.structuredBody 1..1 MS 
+
+//* component.structuredBody.component ^slicing.discriminator.type = #pattern
+//* component.structuredBody.component ^slicing.discriminator.path = "code"
+//* component.structuredBody.component ^slicing.rules = #open
+//* component.structuredBody.component ^slicing.description = "Paramedicine Summary of Care CDA Clinical Subset Sections"
+//* component.structuredBody.component ^slicing.ordered = false
+//* component.structuredBody.component contains 
+//  sectionDetailedChiefComplaint  1..1 MS and
+//  sectionDetailedChiefComplaint  1..1 MS and
 
 
 
