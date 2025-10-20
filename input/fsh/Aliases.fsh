@@ -8,7 +8,7 @@ Alias: $ClinicalDocument = http://hl7.org/cda/stds/core/StructureDefinition/Clin
 
 
 // IHE Sections 
-//Alias: $IHEMedicationsSection = http://hl7.org/cda/stds/core/StructureDefinition/ClinicalDocument
+Alias: $IHEMedicationsSection = https://profiles.ihe.net/PCC/PSCc/StructureDefinition/IHE.Medications.Section
 
 
 

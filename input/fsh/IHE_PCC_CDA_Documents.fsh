@@ -417,10 +417,81 @@ TODO: Value set bindings comented out, need to be linked to Uv realm value sets 
 
 
 
+Profile:        IHE_PCC_MedicalSummary
+Parent:         IHE_PCC_MedicalDocument
+Id:             IHE.PCC.MS.MedicalSummary
+Title:          "IHE Medical Summary CDA"
+Description:    """
+TBD
+"""
+
+//* ^identifier.system = "urn:ietf:rfc:3986"
+//* ^identifier.value = "urn:hl7ii:2.16.840.1.113883.10.20.22.1.1:2024-05-01"
+//* ^status = #draft
+* obeys should-sdtcCategory
+* templateId 1..
+* templateId contains medical-summary 1..1
+* templateId[medical-summary].root 1..
+* templateId[medical-summary].root = "1.3.6.1.4.1.19376.1.5.3.1.1.2"
+
+* component ^comment = "SHALL contain exactly one [1..1] component (CONF:1198-8349)."
+* component.structuredBody 1..
+* component.structuredBody obeys ccrfv-or-cc-or-rfv and ap-or-a-and-p and ap-combo and cc-rfv-combo
+* component.structuredBody ^short = "In this template (templateId 2.16.840.1.113883.10.20.22.1.3.2), coded entries are optional."
+* component.structuredBody ^comment = "This component SHALL contain exactly one [1..1] structuredBody (CONF:1198-30570)."
+* component.structuredBody.component 12..
+* component.structuredBody.component ^slicing.discriminator[+].type = #profile
+* component.structuredBody.component ^slicing.discriminator[=].path = "section"
+* component.structuredBody.component ^slicing.rules = #open
+* component.structuredBody.component contains medications 1..1
+//    problems 1..1 and
+//    allergies 1..1 and
+//    payers 0..1 
+* component.structuredBody.component[medications] ^comment = "This structuredBody SHALL contain exactly one [1..1] component (CONF:1198-30571)."
+* component.structuredBody.component[medications].section only $IHEMedicationsSection
+* component.structuredBody.component[medications].section ^comment = "SHALL contain exactly one [1..1] Medications Section (identifier: urn:oid:1.3.6.1.4.1.19376.1.5.3.1.3.19:2007‑04‑01) (CONF:1198-30572)."
+
+//* component.structuredBody.component[problems] ^comment = "This structuredBody MAY contain zero or one [0..1] component (CONF:1198-30573) such that it"
+//* component.structuredBody.component[problems].section only $IHEProblemsSection
+//* component.structuredBody.component[problems].section ^comment = "SHALL contain exactly one [1..1] Problems Section (identifier: urn:oid:TBD) (CONF:1198-30574)."
+
+//* component.structuredBody.component[allergies] ^comment = "This structuredBody MAY contain zero or one [0..1] component (CONF:1198-30575) such that it"
+//* component.structuredBody.component[allergies].section only $IHEAllergiesAndIntolerances
+//* component.structuredBody.component[allergies].section ^comment = "SHALL contain exactly one [1..1] Allergies and Intolerances Section (identifier:) (CONF:1198-30576)."
+
+//* component.structuredBody.component[payers] ^comment = "This structuredBody MAY contain zero or one [0..1] component (CONF:1198-30577) such that it"
+//* component.structuredBody.component[payers].section only $IHEPayer
+//* component.structuredBody.component[payers].section ^comment = "SHALL contain exactly one [1..1] Payer Section (identifier:) (CONF:1198-30578)."
 
 
 
 
+// TODO Make alternate invariants for Required sections
+//Invariant: should-section-hpi
+//Description: "SHOULD contain a History of Present Illness Section"
+//* severity = #warning
+//* expression = "component.where(section.hasTemplateIdOf('http://hl7.org/cda/us/ccda/StructureDefinition/HistoryofPresentIllnessSection'))"
+
+
+Invariant: should-sdtcCategory
+Description: "SHOULD contain sdtcCategory"
+* severity = #warning
+* expression = "sdtcCategory.exists()"
+
+Invariant: 1198-8333
+Description: """When participant/@typeCode is IND, associatedEntity/@classCode **SHALL** be selected from ValueSet 2.16.840.1.113883.11.20.9.33 INDRoleclassCodes *STATIC* 2011-09-30 (CONF:1198-8333).
+A special class of participant is the supporting person or organization:  an individual or an organization that has a relationship to the patient, including  parents, relatives, caregivers, insurance policyholders, and guarantors. In the case of a supporting person who is also an emergency contact or next-of-kin, a participant element should be present for each role recorded."""
+* severity = #warning
+
+Invariant: 1198-8348
+Description: "The responsibleParty element, if present, **SHALL** contain an assignedEntity element, which **SHALL** contain an assignedPerson element, a representedOrganization element, or both (CONF:1198-8348)."
+* severity = #error
+* expression = "assignedEntity.assignedPerson.exists() or assignedEntity.representedOrganization.exists()"
+
+Invariant: 1198-8343
+Description: "An encounterParticipant element, if present, SHALL contain an assignedEntity element, which SHALL contain an assignedPerson element, a representedOrganization element, or both (CONF:1198-8343)."
+* severity = #error
+* expression = "assignedEntity.assignedPerson.exists() or assignedEntity.representedOrganization.exists()"
 
 
 Invariant: 4537-6380
