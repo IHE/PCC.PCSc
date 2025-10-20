@@ -436,7 +436,6 @@ TBD
 
 * component ^comment = "SHALL contain exactly one [1..1] component (CONF:1198-8349)."
 * component.structuredBody 1..
-* component.structuredBody obeys ccrfv-or-cc-or-rfv and ap-or-a-and-p and ap-combo and cc-rfv-combo
 * component.structuredBody ^short = "In this template (templateId 2.16.840.1.113883.10.20.22.1.3.2), coded entries are optional."
 * component.structuredBody ^comment = "This component SHALL contain exactly one [1..1] structuredBody (CONF:1198-30570)."
 * component.structuredBody.component 12..
