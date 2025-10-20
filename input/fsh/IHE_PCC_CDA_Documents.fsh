@@ -7,7 +7,7 @@ This section defines the base set of constraints used by almost all medical docu
 """
 
 * templateId 1..* MS
-* templateId[+].root =  urn:oid:1.3.6.1.4.1.19376.1.5.3.1.1.1
+* templateId[+].root =  "urn:oid:1.3.6.1.4.1.19376.1.5.3.1.1.1"
 // US Realm * templateId[+] = "2.16.840.1.113883.10.20.3"
 
 
