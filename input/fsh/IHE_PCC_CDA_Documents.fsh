@@ -1,6 +1,6 @@
-Profile:        IHE_PCC_MedicalDocument_ClinicalDocument
+Profile:        IHE_PCC_MedicalDocument
 Parent:         http://hl7.org/cda/stds/core/StructureDefinition/ClinicalDocument
-Id:             IHE.PCC.MD.ClinicalDocument.MedicalDocument 
+Id:             IHE.PCC.MD.MedicalDocument 
 Title:          "IHE Medical Document CDA"
 Description:    """
 This section defines the base set of constraints used by almost all medical document profiles described in the PCC Technical Framework.
@@ -9,6 +9,8 @@ This Document header takes all the header constraints from HL7's history and Pys
 It does not take in the section requirments from the History and physical
 
 Note: Starting from template of US-realm header and deconstraining US specific  constraints (including invariants)
+
+TODO: Value set bindings comented out, need to be linked to Uv realm value sets or concepts 
 """
 
 //* ^identifier.system = "urn:ietf:rfc:3986"
@@ -51,7 +53,7 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * effectiveTime MS 
 * confidentialityCode.nullFlavor ..0
 * confidentialityCode.code 1..
-* confidentialityCode.code from $2.16.840.1.113883.1.11.16926 (preferred)
+//* confidentialityCode.code from $2.16.840.1.113883.1.11.16926 (preferred)
 * languageCode 1..
 * languageCode ^comment = "SHALL contain exactly one [1..1] languageCode, which SHALL be selected from ValueSet AllLanguages https://www.hl7.org/fhir/valueset-all-languages.html (OID 2.16.840.1.113883.4.642.3.21) DYNAMIC."
 * setId ^comment = "MAY contain zero or one [0..1] setId (CONF:4537-5261)."
@@ -85,16 +87,16 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 //* recordTarget.patientRole.patient.sdtcDeceasedTime ^extension[=].valueBoolean = true
 //* recordTarget.patientRole.patient.sdtcDeceasedTime ^short = "𝗨𝗦𝗖𝗗𝗜: Date of Death"
 //* recordTarget.patientRole.patient.sdtcDeceasedTime ^comment = "This patient MAY contain zero or one [0..1] sdtc:deceasedTime (CONF:4537-32988)."
-* recordTarget.patientRole.patient.maritalStatusCode from $2.16.840.1.113883.1.11.12212 (required)
+//* recordTarget.patientRole.patient.maritalStatusCode from $2.16.840.1.113883.1.11.12212 (required)
 * recordTarget.patientRole.patient.maritalStatusCode ^comment = "This patient SHOULD contain zero or one [0..1] maritalStatusCode, which SHALL be selected from ValueSet Marital Status urn:oid:2.16.840.1.113883.1.11.12212 DYNAMIC (CONF:4537-5303)."
-* recordTarget.patientRole.patient.religiousAffiliationCode from $2.16.840.1.113883.1.11.19185 (required)
+//* recordTarget.patientRole.patient.religiousAffiliationCode from $2.16.840.1.113883.1.11.19185 (example)
 * recordTarget.patientRole.patient.religiousAffiliationCode ^comment = "This patient MAY contain zero or one [0..1] religiousAffiliationCode, which SHALL be selected from ValueSet Religious Affiliation urn:oid:2.16.840.1.113883.1.11.19185 DYNAMIC (CONF:4537-5317)."
 * recordTarget.patientRole.patient.raceCode 0..
-* recordTarget.patientRole.patient.raceCode from $2.16.840.1.113883.4.642.2.575 (example)
+//* recordTarget.patientRole.patient.raceCode from $2.16.840.1.113883.4.642.2.575 (example)
 //* recordTarget.patientRole.patient.raceCode ^extension[+].url = "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement"
 //* recordTarget.patientRole.patient.raceCode ^extension[=].valueBoolean = true
 //* recordTarget.patientRole.patient.raceCode ^short = "𝗨𝗦𝗖𝗗𝗜: Race"
-* recordTarget.patientRole.patient.sdtcRaceCode from $2.16.840.1.113762.1.4.1267.25 (example)
+//* recordTarget.patientRole.patient.sdtcRaceCode from $2.16.840.1.113762.1.4.1267.25 (example)
 * recordTarget.patientRole.patient.sdtcRaceCode ^extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/xml-namespace"
 * recordTarget.patientRole.patient.sdtcRaceCode ^extension[=].valueUri = "urn:hl7-org:sdtc"
 * recordTarget.patientRole.patient.sdtcRaceCode ^extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/xml-name"
@@ -103,11 +105,11 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 //* recordTarget.patientRole.patient.sdtcRaceCode ^extension[=].valueBoolean = true
 //* recordTarget.patientRole.patient.sdtcRaceCode ^short = "𝗨𝗦𝗖𝗗𝗜: Race - The sdtc:raceCode is only used to record additional values when the patient has indicated multiple races or additional race detail beyond the five categories required for Meaningful Use Stage 2. The prefix sdtc: SHALL be bound to the namespace “urn:hl7-org:sdtc”. The use of the namespace provides a necessary extension to CDA R2 for the use of the additional raceCode elements."
 * recordTarget.patientRole.patient.ethnicGroupCode 0..
-* recordTarget.patientRole.patient.ethnicGroupCode from $2.16.840.1.113883.4.642.40.2.48.3 (example)
+//* recordTarget.patientRole.patient.ethnicGroupCode from $2.16.840.1.113883.4.642.40.2.48.3 (example)
 //* recordTarget.patientRole.patient.ethnicGroupCode ^extension[+].url = "http://hl7.org/fhir/us/core/StructureDefinition/uscdi-requirement"
 //* recordTarget.patientRole.patient.ethnicGroupCode ^extension[=].valueBoolean = true
 //* recordTarget.patientRole.patient.ethnicGroupCode ^short = "𝗨𝗦𝗖𝗗𝗜: Ethnicity"
-* recordTarget.patientRole.patient.sdtcEthnicGroupCode from $2.16.840.1.113883.4.642.40.2.48.1 (example)
+//* recordTarget.patientRole.patient.sdtcEthnicGroupCode from $2.16.840.1.113883.4.642.40.2.48.1 (example)
 * recordTarget.patientRole.patient.sdtcEthnicGroupCode ^extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/xml-namespace"
 * recordTarget.patientRole.patient.sdtcEthnicGroupCode ^extension[=].valueUri = "urn:hl7-org:sdtc"
 * recordTarget.patientRole.patient.sdtcEthnicGroupCode ^extension[+].url = "http://hl7.org/fhir/tools/StructureDefinition/xml-name"
@@ -117,13 +119,13 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 //* recordTarget.patientRole.patient.sdtcEthnicGroupCode ^short = "𝗨𝗦𝗖𝗗𝗜: Ethnicity"
 * recordTarget.patientRole.patient.guardian obeys should-us-code and should-us-addr and should-us-telecom
 * recordTarget.patientRole.patient.guardian ^comment = "This patient MAY contain zero or more [0..*] guardian (CONF:4537-5325)."
-* recordTarget.patientRole.patient.guardian.code from $2.16.840.1.113883.11.20.12.1 (required)
+//* recordTarget.patientRole.patient.guardian.code from $2.16.840.1.113883.11.20.12.1 (required)
 * recordTarget.patientRole.patient.guardian.code ^comment = "The guardian, if present, SHOULD contain zero or one [0..1] code, which SHALL be selected from ValueSet Personal And Legal Relationship Role Type urn:oid:2.16.840.1.113883.11.20.12.1 DYNAMIC (CONF:4537-5326)."
 * recordTarget.patientRole.patient.guardian.addr MS
 * recordTarget.patientRole.patient.guardian.telecom obeys should-use
 * recordTarget.patientRole.patient.guardian.telecom ^comment = "The guardian, if present, SHOULD contain zero or more [0..*] telecom (CONF:4537-5382)."
 * recordTarget.patientRole.patient.guardian.telecom.use ..1
-* recordTarget.patientRole.patient.guardian.telecom.use from $2.16.840.1.113883.11.20.9.20 (required)
+//* recordTarget.patientRole.patient.guardian.telecom.use from $2.16.840.1.113883.11.20.9.20 (required)
 * recordTarget.patientRole.patient.guardian.telecom.use ^comment = "The telecom, if present, SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:4537-7993)."
 * recordTarget.patientRole.patient.guardian.guardianPerson 1..
 * recordTarget.patientRole.patient.guardian.guardianPerson ^comment = "The guardian, if present, SHALL contain exactly one [1..1] guardianPerson (CONF:4537-5385)."
@@ -140,9 +142,9 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 //* recordTarget.patientRole.patient.languageCommunication ^short = "𝗨𝗦𝗖𝗗𝗜: Preferred Language"
 * recordTarget.patientRole.patient.languageCommunication.languageCode 1..
 * recordTarget.patientRole.patient.languageCommunication.languageCode from Languages (required)
-* recordTarget.patientRole.patient.languageCommunication.modeCode from $2.16.840.1.113883.1.11.12249 (required)
+//* recordTarget.patientRole.patient.languageCommunication.modeCode from $2.16.840.1.113883.1.11.12249 (required)
 * recordTarget.patientRole.patient.languageCommunication.modeCode ^comment = "The languageCommunication, if present, MAY contain zero or one [0..1] modeCode, which SHALL be selected from ValueSet LanguageAbilityMode urn:oid:2.16.840.1.113883.1.11.12249 DYNAMIC (CONF:4537-5409)."
-* recordTarget.patientRole.patient.languageCommunication.proficiencyLevelCode from $2.16.840.1.113883.1.11.12199 (example)
+//* recordTarget.patientRole.patient.languageCommunication.proficiencyLevelCode from $2.16.840.1.113883.1.11.12199 (example)
 * recordTarget.patientRole.patient.languageCommunication.proficiencyLevelCode ^comment = "The languageCommunication, if present, SHOULD contain zero or one [0..1] proficiencyLevelCode, which SHALL be selected from ValueSet LanguageAbilityProficiency urn:oid:2.16.840.1.113883.1.11.12199 DYNAMIC (CONF:4537-9965)."
 * recordTarget.patientRole.patient.languageCommunication.preferenceInd ^comment = "The languageCommunication, if present, SHOULD contain zero or one [0..1] preferenceInd (CONF:4537-5414)."
 * recordTarget.patientRole.providerOrganization ^comment = "This patientRole MAY contain zero or one [0..1] providerOrganization (CONF:4537-5416)."
@@ -156,7 +158,7 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * recordTarget.patientRole.providerOrganization.telecom obeys should-use
 * recordTarget.patientRole.providerOrganization.telecom ^comment = "The providerOrganization, if present, SHALL contain at least one [1..*] telecom (CONF:4537-5420)."
 * recordTarget.patientRole.providerOrganization.telecom.use ..1
-* recordTarget.patientRole.providerOrganization.telecom.use from $2.16.840.1.113883.11.20.9.20 (required)
+//* recordTarget.patientRole.providerOrganization.telecom.use from $2.16.840.1.113883.11.20.9.20 (required)
 * recordTarget.patientRole.providerOrganization.telecom.use ^comment = "Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:4537-7994)."
 * recordTarget.patientRole.providerOrganization.addr 1..
 * author ^short = "The author element represents the creator of the clinical document.  The author may be a device or a person."
@@ -179,13 +181,13 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * author.assignedAuthor.code ^comment = "This assignedAuthor SHOULD contain zero or one [0..1] code (CONF:4537-16787)."
 * author.assignedAuthor.code.nullFlavor ..0
 * author.assignedAuthor.code.code 1..
-* author.assignedAuthor.code.code from $2.16.840.1.114222.4.11.1066 (preferred)
+//* author.assignedAuthor.code.code from $2.16.840.1.114222.4.11.1066 (preferred)
 * author.assignedAuthor.addr 1..
 * author.assignedAuthor.telecom 1..
 * author.assignedAuthor.telecom obeys should-use
 * author.assignedAuthor.telecom ^comment = "This assignedAuthor SHALL contain at least one [1..*] telecom (CONF:4537-5428)."
 * author.assignedAuthor.telecom.use ..1
-* author.assignedAuthor.telecom.use from $2.16.840.1.113883.11.20.9.20 (required)
+//* author.assignedAuthor.telecom.use from $2.16.840.1.113883.11.20.9.20 (required)
 * author.assignedAuthor.telecom.use ^comment = "Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:4537-7995)."
 * author.assignedAuthor.assignedPerson ^comment = "MAY contain assignedPerson"
 * author.assignedAuthor.assignedPerson.name 1..
@@ -201,7 +203,7 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * dataEnterer.assignedEntity.id ^comment = "This assignedEntity SHALL contain at least one [1..*] id (CONF:4537-5443)."
 * dataEnterer.assignedEntity.id.root obeys may-npi
 * dataEnterer.assignedEntity.id.root ^comment = "Such ids SHOULD contain zero or one [0..1] @root=\"2.16.840.1.113883.4.6\" National Provider Identifier (CONF:4537-16821)."
-* dataEnterer.assignedEntity.code from $2.16.840.1.114222.4.11.1066 (preferred)
+//* dataEnterer.assignedEntity.code from $2.16.840.1.114222.4.11.1066 (preferred)
 * dataEnterer.assignedEntity.code ^comment = "This assignedEntity MAY contain zero or one [0..1] code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy urn:oid:2.16.840.1.114222.4.11.1066 DYNAMIC (CONF:4537-32173)."
 * dataEnterer.assignedEntity.addr 1..
 * dataEnterer.assignedEntity.addr MS 
@@ -209,7 +211,7 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * dataEnterer.assignedEntity.telecom obeys should-use
 * dataEnterer.assignedEntity.telecom ^comment = "This assignedEntity SHALL contain at least one [1..*] telecom (CONF:4537-5466)."
 * dataEnterer.assignedEntity.telecom.use ..1
-* dataEnterer.assignedEntity.telecom.use from $2.16.840.1.113883.11.20.9.20 (required)
+//* dataEnterer.assignedEntity.telecom.use from $2.16.840.1.113883.11.20.9.20 (required)
 * dataEnterer.assignedEntity.telecom.use ^comment = "Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:4537-7996)."
 * dataEnterer.assignedEntity.assignedPerson 1..
 * dataEnterer.assignedEntity.assignedPerson ^comment = "This assignedEntity SHALL contain exactly one [1..1] assignedPerson (CONF:4537-5469)."
@@ -229,7 +231,7 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * informant[provider].assignedEntity ^comment = "SHALL contain exactly one [1..1] assignedEntity (CONF:4537-8002)."
 * informant[provider].assignedEntity.id ^short = "If assignedEntity/id is a provider then this id, **SHOULD** include zero or one [0..1] id where id/@root =\"2.16.840.1.113883.4.6\" National Provider Identifier (CONF:4537-9946)."
 * informant[provider].assignedEntity.id ^comment = "This assignedEntity SHALL contain at least one [1..*] id (CONF:4537-9945)."
-* informant[provider].assignedEntity.code from $2.16.840.1.114222.4.11.1066 (preferred)
+//* informant[provider].assignedEntity.code from $2.16.840.1.114222.4.11.1066 (preferred)
 * informant[provider].assignedEntity.code ^comment = "This assignedEntity MAY contain zero or one [0..1] code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy urn:oid:2.16.840.1.114222.4.11.1066 DYNAMIC (CONF:4537-32174)."
 * informant[provider].assignedEntity.addr 1..
 * informant[provider].assignedEntity.addr MS 
@@ -255,7 +257,7 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * custodian.assignedCustodian.representedCustodianOrganization.telecom obeys should-use
 * custodian.assignedCustodian.representedCustodianOrganization.telecom ^comment = "This representedCustodianOrganization SHALL contain exactly one [1..1] telecom (CONF:4537-5525)."
 * custodian.assignedCustodian.representedCustodianOrganization.telecom.use ..1
-* custodian.assignedCustodian.representedCustodianOrganization.telecom.use from $2.16.840.1.113883.11.20.9.20 (required)
+//* custodian.assignedCustodian.representedCustodianOrganization.telecom.use from $2.16.840.1.113883.11.20.9.20 (required)
 * custodian.assignedCustodian.representedCustodianOrganization.telecom.use ^comment = "This telecom SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:4537-7998)."
 * custodian.assignedCustodian.representedCustodianOrganization.sdtcTelecom ^short = "The stdc:telecom extension can be used to provide additional telecom elements for the custodian organization."
 * custodian.assignedCustodian.representedCustodianOrganization.addr 1..
@@ -282,7 +284,7 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * legalAuthenticator.assignedEntity.id ^comment = "This assignedEntity SHALL contain at least one [1..*] id (CONF:4537-5586)."
 * legalAuthenticator.assignedEntity.id.root ^short = "MAY contain '2.16.840.1.113883.4.6' (NPI)"
 * legalAuthenticator.assignedEntity.id.root ^comment = "Such ids MAY contain zero or one [0..1] @root=\"2.16.840.1.113883.4.6\" National Provider Identifier (CONF:4537-16823)."
-* legalAuthenticator.assignedEntity.code from $2.16.840.1.114222.4.11.1066 (preferred)
+//* legalAuthenticator.assignedEntity.code from $2.16.840.1.114222.4.11.1066 (preferred)
 * legalAuthenticator.assignedEntity.code ^comment = "This assignedEntity MAY contain zero or one [0..1] code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy urn:oid:2.16.840.1.114222.4.11.1066 DYNAMIC (CONF:4537-17000)."
 * legalAuthenticator.assignedEntity.addr 1..
 * legalAuthenticator.assignedEntity.addr MS 
@@ -290,7 +292,7 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * legalAuthenticator.assignedEntity.telecom obeys should-use
 * legalAuthenticator.assignedEntity.telecom ^comment = "This assignedEntity SHALL contain at least one [1..*] telecom (CONF:4537-5595)."
 * legalAuthenticator.assignedEntity.telecom.use ..1
-* legalAuthenticator.assignedEntity.telecom.use from $2.16.840.1.113883.11.20.9.20 (required)
+//* legalAuthenticator.assignedEntity.telecom.use from $2.16.840.1.113883.11.20.9.20 (required)
 * legalAuthenticator.assignedEntity.telecom.use ^comment = "Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use  urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:4537-7999)."
 * legalAuthenticator.assignedEntity.assignedPerson 1..
 * legalAuthenticator.assignedEntity.assignedPerson ^comment = "This assignedEntity SHALL contain exactly one [1..1] assignedPerson (CONF:4537-5597)."
@@ -308,7 +310,7 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * authenticator.assignedEntity.id.root obeys may-npi
 * authenticator.assignedEntity.id.root ^comment = "Such ids SHOULD contain zero or one [0..1] @root=\"2.16.840.1.113883.4.6\" Provider Identifier  (CONF:4537-16824)."
 * authenticator.assignedEntity.code ^comment = "This assignedEntity MAY contain zero or one [0..1] code (CONF:4537-16825)."
-* authenticator.assignedEntity.code.code from $2.16.840.1.114222.4.11.1066 (preferred)
+//* authenticator.assignedEntity.code.code from $2.16.840.1.114222.4.11.1066 (preferred)
 * authenticator.assignedEntity.code.code ^comment = "The code, if present, MAY contain zero or one [0..1] @code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy urn:oid:2.16.840.1.114222.4.11.1066 DYNAMIC (CONF:4537-16826)."
 * authenticator.assignedEntity.addr 1..
 * authenticator.assignedEntity.addr MS
@@ -316,7 +318,7 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * authenticator.assignedEntity.telecom obeys should-use
 * authenticator.assignedEntity.telecom ^comment = "This assignedEntity SHALL contain at least one [1..*] telecom (CONF:4537-5622)."
 * authenticator.assignedEntity.telecom.use ..1
-* authenticator.assignedEntity.telecom.use from $2.16.840.1.113883.11.20.9.20 (required)
+//* authenticator.assignedEntity.telecom.use from $2.16.840.1.113883.11.20.9.20 (required)
 * authenticator.assignedEntity.telecom.use ^comment = "Such telecoms SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet Telecom Use urn:oid:2.16.840.1.113883.11.20.9.20 DYNAMIC (CONF:4537-8000)."
 * authenticator.assignedEntity.assignedPerson 1..
 * authenticator.assignedEntity.assignedPerson ^comment = "This assignedEntity SHALL contain exactly one [1..1] assignedPerson (CONF:4537-5624)."
@@ -342,11 +344,11 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * documentationOf.serviceEvent.effectiveTime.low ^comment = "This effectiveTime SHALL contain exactly one [1..1] low (CONF:4537-14838)."
 * documentationOf.serviceEvent.performer ^short = "The performer participant represents clinicians who actually and principally carry out the serviceEvent. In a transfer of care this represents the healthcare providers involved in the current or pertinent historical care of the patient. Preferably, the patient's key healthcare care team members would be listed, particularly their primary physician and any active consulting physicians, therapists, and counselors."
 * documentationOf.serviceEvent.performer ^comment = "This serviceEvent SHOULD contain zero or more [0..*] performer (CONF:4537-14839)."
-* documentationOf.serviceEvent.performer.typeCode from $2.16.840.1.113883.1.11.19601 (required)
+//* documentationOf.serviceEvent.performer.typeCode from $2.16.840.1.113883.1.11.19601 (required)
 * documentationOf.serviceEvent.performer.typeCode ^comment = "The performer, if present, SHALL contain exactly one [1..1] @typeCode, which SHALL be selected from ValueSet x_ServiceEventPerformer urn:oid:2.16.840.1.113883.1.11.19601 STATIC (CONF:4537-14840)."
 * documentationOf.serviceEvent.performer.functionCode obeys should-code-attr
 * documentationOf.serviceEvent.performer.functionCode ^comment = "The performer, if present, MAY contain zero or one [0..1] functionCode (CONF:4537-16818)."
-* documentationOf.serviceEvent.performer.functionCode.code from $2.16.840.1.113762.1.4.1099.30 (preferred)
+//* documentationOf.serviceEvent.performer.functionCode.code from $2.16.840.1.113762.1.4.1099.30 (preferred)
 * documentationOf.serviceEvent.performer.functionCode.code ^comment = "The functionCode, if present, SHOULD contain zero or one [0..1] @code, which SHOULD be selected from ValueSet Care Team Member Function urn:oid:2.16.840.1.113762.1.4.1099.30 DYNAMIC (CONF:4537-32889)."
 * documentationOf.serviceEvent.performer.time MS
 * documentationOf.serviceEvent.performer.assignedEntity obeys should-us-code
@@ -354,7 +356,7 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * documentationOf.serviceEvent.performer.assignedEntity.id ^comment = "This assignedEntity SHALL contain at least one [1..*] id (CONF:4537-14846)."
 * documentationOf.serviceEvent.performer.assignedEntity.id.root obeys may-npi
 * documentationOf.serviceEvent.performer.assignedEntity.id.root ^comment = "Such ids SHOULD contain zero or one [0..1] @root=\"2.16.840.1.113883.4.6\" National Provider Identifier (CONF:4537-14847)."
-* documentationOf.serviceEvent.performer.assignedEntity.code from $2.16.840.1.114222.4.11.1066 (preferred)
+//* documentationOf.serviceEvent.performer.assignedEntity.code from $2.16.840.1.114222.4.11.1066 (preferred)
 * documentationOf.serviceEvent.performer.assignedEntity.code ^comment = "This assignedEntity SHOULD contain zero or one [0..1] code, which SHOULD be selected from ValueSet Healthcare Provider Taxonomy urn:oid:2.16.840.1.114222.4.11.1066 DYNAMIC (CONF:4537-14842)."
 * authorization ^short = "The authorization element represents information about the patient's consent. The type of consent is conveyed in consent/code. Consents in the header have been finalized (consent/statusCode must equal Completed) and should be on file. This specification does not address how 'Privacy Consent' is represented, but does not preclude the inclusion of 'Privacy Consent'. The authorization consent is used for referring to consents that are documented elsewhere in the EHR or medical record for a health condition and/or treatment that is described in the CDA document."
 * authorization ^comment = "MAY contain zero or more [0..*] authorization (CONF:4537-16792) such that it"
@@ -370,7 +372,7 @@ Note: Starting from template of US-realm header and deconstraining US specific  
 * componentOf.encompassingEncounter ^comment = "The componentOf, if present, SHALL contain exactly one [1..1] encompassingEncounter (CONF:4537-9956)."
 * componentOf.encompassingEncounter.id 1..
 * componentOf.encompassingEncounter.id ^comment = "This encompassingEncounter SHALL contain at least one [1..*] id (CONF:4537-9959)."
-* componentOf.encompassingEncounter.code from $2.16.840.1.113762.1.4.1240.5 (preferred)
+//* componentOf.encompassingEncounter.code from $2.16.840.1.113762.1.4.1240.5 (preferred)
 * componentOf.encompassingEncounter.code ^comment = "This encompassingEncounter MAY contain zero or one [0..1] code, which SHOULD be selected from ValueSet Act Encounter Codes urn:oid:2.16.840.1.113762.1.4.1240.5 (CONF:1198-30873)."
 * componentOf.encompassingEncounter.effectiveTime MS 
 * componentOf.encompassingEncounter.responsibleParty ^comment = "This encompassingEncounter SHOULD contain zero or one [0..1] responsibleParty (CONF:1198-8391)."
