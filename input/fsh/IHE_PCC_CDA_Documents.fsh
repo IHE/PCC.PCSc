@@ -11,9 +11,9 @@ It does not take in the section requirments from the History and physical
 Note: Starting from template of US-realm header and deconstraining US specific  constraints (including invariants)
 """
 
-* ^identifier.system = "urn:ietf:rfc:3986"
-* ^identifier.value = "urn:hl7ii:2.16.840.1.113883.10.20.22.1.1:2024-05-01"
-* ^status = #draft
+//* ^identifier.system = "urn:ietf:rfc:3986"
+//* ^identifier.value = "urn:hl7ii:2.16.840.1.113883.10.20.22.1.1:2024-05-01"
+//* ^status = #draft
 * obeys 4537-6380 and 4537-6387 and should-legalAuthenticator and should-relatedParticipant
 * realmCode MS
 * realmCode ^comment = "SHALL contain exactly one [1..1] realmCode=\"uv \". SHOULD be In universal Realm Unless constrained by Vol4 Elements"
