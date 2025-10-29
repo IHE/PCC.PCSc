@@ -39,7 +39,7 @@ parameters:  # see https://confluence.hl7.org/display/CDA/IG+Publisher+Basics+fo
   path-resource:
     - input/resources
     - fsh-generated/resources
-    - input/fsh/examples
+    - fsh/examples
     - input/pagecontent
 #  path-pages:
 #    - input/pagecontent
