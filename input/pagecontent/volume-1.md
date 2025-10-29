@@ -17,25 +17,25 @@ The actors in this profile are described in more detail in the sections below.
 
 #### 1:X.1.1.1 Content Creator
 
-The [PSCc Content Creator](https://profiles.ihe.net/ITI/sIPS/pcc.html#31-document-sharing-pcc-1) creates the [PSCc content](StructureDefinition-IHE.PCC.MD.ClinicalDocument.MedicalDocument.html) and shares it using one of the methods defined in the [IHE Document Sharing Health Information Exchange](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html).
+The [PSCc Content Creator](https://profiles.ihe.net/ITI/sIPS/pcc.html#31-document-sharing-pcc-1) creates the [PSCc content](https://profiles.ihe.net/PCC/PSCc/StructureDefinition/IHE.PCC.MD.MedicalDocument.html) and shares it using one of the methods defined in the [IHE Document Sharing Health Information Exchange](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html).
 **TODO Replace LINKS**
 
 <a name="Content-Consumer"> </a>
 
 #### 1:X.1.1.2 Content Consumer
 
-The [PSCc Content Consumer](https://profiles.ihe.net/ITI/sIPS/pcc.html#31-document-sharing-pcc-1) consumes the [PSCc content](StructureDefinition-IHE.PCC.mAPS.Composition.html) and obtains it using one of the methods defined in the [IHE Document Sharing Health Information Exchange](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html).
+The [PSCc Content Consumer](https://profiles.ihe.net/ITI/sIPS/pcc.html#31-document-sharing-pcc-1) consumes the [PSCc content](https://profiles.ihe.net/PCC/PSCc/StructureDefinition/IHE.PCC.MD.MedicalDocument.html) and obtains it using one of the methods defined in the [IHE Document Sharing Health Information Exchange](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html).
 
 
 
 **TODO Still TEMPLATE**
-### 1:X.1.2 mAPS Content
+### 1:X.1.2 TODO Content
 
-The Content Creator and Content Consumer share the [APS content](StructureDefinition-IHE.PCC.MD.ClinicalDocument.MedicalDocument.html) using one of the methods defined in the [IHE Document Sharing Health Information Exchange](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html).
+The Content Creator and Content Consumer share the [TODO content](https://profiles.ihe.net/PCC/PSCc/StructureDefinition/IHE.PCC.MD.MedicalDocument.html) using one of the methods defined in the [IHE Document Sharing Health Information Exchange](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html).
 
 <a name="actor-options"> </a>
 
-## 1:X.2 mAPS Actor Options
+## 1:X.2 TODO Actor Options
 
 Options that may be selected for each actor in this implementation guide, are listed in Table 3.2-1 below. Dependencies
 between options when applicable are specified in notes.
@@ -87,7 +87,7 @@ This option defines the processing requirements placed on the content consumers 
 
 <a name="required-groupings"> </a>
 
-## 1:X.3 mAPS Required Actor Groupings
+## 1:X.3 TODO Required Actor Groupings
 
 There are no required actor groupings for this profile.
 

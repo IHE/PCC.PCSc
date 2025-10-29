@@ -67,7 +67,7 @@ pages:
   volume-1.md:
     title: 1:XX Paramedicine Summary Of Care CDA Volume 1
     generation: markdown
-  volume-3.md:
+  pcc-volume-3.md:
     title: 1:XX Paramedicine Summary Of Care CDA Volume 3
     generation: markdown
   testplan.md:
@@ -94,7 +94,7 @@ menu:
     Security Considerations: volume-1.html#security-considerations
     Cross-Profile Considerations: volume-1.html#other-grouping
   Volume 3:
-    "Content Modules": volume-3.html
+    "Content Modules": pcc-volume-3.html
   Artifacts: artifacts.html
   Other:
     Changes to Other IHE Specifications: other.html
