@@ -27,7 +27,7 @@ This guide is organized into the following sections:
    1. [ToDo do \[domain-YY\]](domain-YY.html)
    1. **TODO: point to the Volume 2 Appendix if there is one - How do I refernce PCC-1 transaction? link it out?**
 3. Volume 3: Metadata and Content
-   1. [Content Modules](pcc-volume-3.html)
+   1. [Content Modules](volume-3.html)
 4. Volume 4: National Extensions
    1. **TODO: point at the National Extensions if there are any**
 5. Other
