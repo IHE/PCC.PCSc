@@ -55,4 +55,3 @@ TBD for more
 * value MS 
 * value only $CD
 * value.code from Severity_Value_Code_VS (preferred)
-* value.code.codeSystem = "2.16.840.1.113883.5.1063"

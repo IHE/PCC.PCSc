@@ -70,46 +70,6 @@ Description: "If realmCode is US, then the templateId SHALL be both 1.3.6.1.4.1.
 
 
 // Pulled over hl7 invarients 
-Invariant: 4537-6380
-Description: "If setId is present versionNumber **SHALL** be present (CONF:4537-6380)."
-* severity = #error
-* expression = "setId.exists() implies versionNumber.exists()"
-
-Invariant: 4537-6387
-Description: "If versionNumber is present setId **SHALL** be present (CONF:4537-6387)."
-* severity = #error
-* expression = "versionNumber.exists() implies setId.exists()"
-
-Invariant: 4537-32993
-Description: "If sdtc:deceasedInd=\"true\", then sdtc:deceasedTime **SHALL** be present with either a @value or @nullFlavor=UNK (CONF:4537-32993)."
-* severity = #error
-* expression = "sdtcDeceasedInd.exists(value='true') implies sdtcDeceasedTime.exists()"
-
-Invariant: 4537-21000
-Description: "If sdtc:deceasedTime/@value is present, then sdtc:deceasedInd SHALL be present with value=true"
-* severity = #error
-* expression = "sdtcDeceasedTime.value.exists() implies sdtcDeceasedInd.exists(value='true')"
-
-Invariant: 4537-16790
-Description: "There **SHALL** be exactly one assignedAuthor/assignedPerson or exactly one assignedAuthor/assignedAuthoringDevice (CONF:4537-16790)."
-* severity = #error
-* expression = "(assignedPerson | assignedAuthoringDevice).count() = 1"
-
-Invariant: 4537-10006
-Description: "**SHALL** contain associatedEntity/associatedPerson *AND/OR* associatedEntity/scopingOrganization (CONF:4537-10006)."
-* severity = #error
-* expression = "associatedEntity.associatedPerson.exists() or associatedEntity.scopingOrganization.exists()"
-
-Invariant: 1198-32905
-Description: "This assignedEntity SHALL contain an assignedPerson or a representedOrganization or both (CONF:1198-32905)."
-* severity = #error
-* expression = "assignedPerson.exists() or representedOrganization.exists()"
-
-Invariant: 1198-8348
-Description: "The responsibleParty element, if present, **SHALL** contain an assignedEntity element, which **SHALL** contain an assignedPerson element, a representedOrganization element, or both (CONF:1198-8348)."
-* severity = #error
-* expression = "assignedEntity.assignedPerson.exists() or assignedEntity.representedOrganization.exists()"
-
 Invariant: value-starts-octothorpe
 Description: "If reference/@value is present, it SHALL begin with a '#' and SHALL point to its corresponding narrative"
 * severity = #error
