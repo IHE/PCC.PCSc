@@ -70,140 +70,45 @@ Description: "If realmCode is US, then the templateId SHALL be both 1.3.6.1.4.1.
 
 
 // Pulled over hl7 invarients 
-Invariant: hl7-4537-6380
+Invariant: 4537-6380
 Description: "If setId is present versionNumber **SHALL** be present (CONF:4537-6380)."
 * severity = #error
 * expression = "setId.exists() implies versionNumber.exists()"
 
-Invariant: hl7-4537-6387
+Invariant: 4537-6387
 Description: "If versionNumber is present setId **SHALL** be present (CONF:4537-6387)."
 * severity = #error
 * expression = "versionNumber.exists() implies setId.exists()"
 
-Invariant: hl7-4537-32993
+Invariant: 4537-32993
 Description: "If sdtc:deceasedInd=\"true\", then sdtc:deceasedTime **SHALL** be present with either a @value or @nullFlavor=UNK (CONF:4537-32993)."
 * severity = #error
 * expression = "sdtcDeceasedInd.exists(value='true') implies sdtcDeceasedTime.exists()"
 
-Invariant: hl7-4537-21000
+Invariant: 4537-21000
 Description: "If sdtc:deceasedTime/@value is present, then sdtc:deceasedInd SHALL be present with value=true"
 * severity = #error
 * expression = "sdtcDeceasedTime.value.exists() implies sdtcDeceasedInd.exists(value='true')"
 
-Invariant: hl7-4537-16790
+Invariant: 4537-16790
 Description: "There **SHALL** be exactly one assignedAuthor/assignedPerson or exactly one assignedAuthor/assignedAuthoringDevice (CONF:4537-16790)."
 * severity = #error
 * expression = "(assignedPerson | assignedAuthoringDevice).count() = 1"
 
-Invariant: hl7-4537-10006
+Invariant: 4537-10006
 Description: "**SHALL** contain associatedEntity/associatedPerson *AND/OR* associatedEntity/scopingOrganization (CONF:4537-10006)."
 * severity = #error
 * expression = "associatedEntity.associatedPerson.exists() or associatedEntity.scopingOrganization.exists()"
 
-Invariant: hl7-1198-32905
+Invariant: 1198-32905
 Description: "This assignedEntity SHALL contain an assignedPerson or a representedOrganization or both (CONF:1198-32905)."
 * severity = #error
 * expression = "assignedPerson.exists() or representedOrganization.exists()"
 
-Invariant: hl7-1198-8348
+Invariant: 1198-8348
 Description: "The responsibleParty element, if present, **SHALL** contain an assignedEntity element, which **SHALL** contain an assignedPerson element, a representedOrganization element, or both (CONF:1198-8348)."
 * severity = #error
 * expression = "assignedEntity.assignedPerson.exists() or assignedEntity.representedOrganization.exists()"
-
-Invariant: should-legalAuthenticator
-Description: "SHOULD contain legalAuthenticator"
-* severity = #warning
-* expression = "legalAuthenticator.exists()"
-
-Invariant: should-relatedParticipant
-Description: "Documents SHOULD contain a RelatedPerson participant"
-* severity = #warning
-* expression = "participant.hasTemplateIdOf('http://hl7.org/cda/us/ccda/StructureDefinition/RelatedPersonRelationshipAndNameParticipant').exists()"
-
-Invariant: should-country
-Description: "SHOULD contain country"
-* severity = #warning
-* expression = "nullFlavor.exists() or item.country.exists()"
-
-Invariant: should-use
-Description: "SHOULD contain @use"
-* severity = #warning
-* expression = "nullFlavor.exists() or use.exists()"
-
-Invariant: should-maritalStatusCode
-Description: "SHOULD contain maritalStatusCode"
-* severity = #warning
-* expression = "maritalStatusCode.exists()"
-
-Invariant: should-us-languageCommunication
-Description: "SHOULD contain languageCommunication"
-* severity = #warning
-* expression = "languageCommunication.exists()"
-
-Invariant: ts-shall-year
-Description: "**SHALL** be precise to at least the year"
-* severity = #error
-* expression = "nullFlavor.exists() or value.toString().length() >= 4"
-
-Invariant: ts-should-day
-Description: "**SHOULD** be precise to at least the day"
-* severity = #warning
-* expression = "nullFlavor.exists() or value.toString().length() >= 10"
-
-Invariant: should-value-att
-Description: "SHOULD contain @value"
-* severity = #warning
-* expression = "value.exists()"
-
-Invariant: should-us-code
-Description: "SHOULD contain code"
-* severity = #warning
-* expression = "code.exists()"
-
-Invariant: should-us-addr
-Description: "SHOULD contain addr"
-* severity = #warning
-* expression = "addr.exists()"
-
-Invariant: should-us-telecom
-Description: "SHOULD contain telecom"
-* severity = #warning
-* expression = "telecom.exists()"
-
-Invariant: should-proficiencyLevelCode
-Description: "SHOULD contain proficiencyLevelCode"
-* severity = #warning
-* expression = "proficiencyLevelCode.exists()"
-
-Invariant: should-preferenceInd
-Description: "SHOULD contain preferenceInd"
-* severity = #warning
-* expression = "preferenceInd.exists()"
-
-Invariant: should-extension
-Description: "SHOULD contain extension"
-* severity = #warning
-* expression = "extension.exists()"
-
-Invariant: should-us-performer
-Description: "SHOULD contain performer"
-* severity = #warning
-* expression = "performer.exists()"
-
-Invariant: should-code-attr
-Description: "SHOULD contain @code"
-* severity = #warning
-* expression = "code.exists()"
-
-Invariant: should-responsibleParty
-Description: "SHOULD contain responsibleParty"
-* severity = #warning
-* expression = "responsibleParty.exists()"
-
-Invariant: should-sdtcCategory
-Description: "SHOULD contain sdtcCategory"
-* severity = #warning
-* expression = "sdtcCategory.exists()"
 
 Invariant: value-starts-octothorpe
 Description: "If reference/@value is present, it SHALL begin with a '#' and SHALL point to its corresponding narrative"
