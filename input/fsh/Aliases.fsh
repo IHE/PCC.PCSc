@@ -4,12 +4,12 @@ Alias: $loinc = http://loinc.org
 Alias: $RxNorm = http://www.nlm.nih.gov/research/umls/rxnorm
 Alias: $ICD10 = http://hl7.org/fhir/sid/icd-10
 Alias: $ICD10-CM = http://hl7.org/fhir/sid/icd-10-cm
-Alias: $ClinicalDocument = http://hl7.org/cda/stds/core/StructureDefinition/ClinicalDocument
+
 
 
 // IHE Sections 
 Alias: $IHEMedicationsSection = https://profiles.ihe.net/PCC/PSCc/StructureDefinition/IHE.Medications.Section
-
+Alias: $IHEActiveProblemsSection = https://profiles.ihe.net/PCC/PSCc/StructureDefinition/IHE.Active.Problems.Section
 
 
 
@@ -49,7 +49,8 @@ Alias: $TS = http://hl7.org/cda/stds/core/StructureDefinition/TS
 
 
 
-
+// Code systems 
+Alias: $ObservationValue = http://terminology.hl7.org/CodeSystem/v3-ObservationValue
 
 
 
