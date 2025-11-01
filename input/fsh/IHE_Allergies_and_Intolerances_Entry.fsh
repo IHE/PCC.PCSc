@@ -16,9 +16,9 @@ TBD Still needs to be finished building
 * templateId[ihe-prob-concern-entry].root = "1.3.6.1.4.1.19376.1.5.3.1.4.6"
 
 * participant MS 
-* participant.typeCode.code = #CSM
-* participant.participantRole.classCode.code = #MANU
-* participant.participantRole.playingEntity.classCode.code = #MMAT
+* participant.typeCode = #CSM
+* participant.participantRole.classCode = #MANU
+* participant.participantRole.playingEntity.classCode = #MMAT
 
 * code 1..1 
 * code.code 1..1 MS 
@@ -33,7 +33,7 @@ TBD Still needs to be finished building
     reactions 0..* and 
     comment 0..* 
 * entryRelationship[reactions].typeCode = #MFST (exactly)
-* entryRelationship[comment].inversionInd = false (exactly)
+* entryRelationship[reactions].inversionInd = false (exactly)
 * entryRelationship[reactions].observation 1..1
 * entryRelationship[reactions].observation only IHE_PCC_Problem_Entry
 * entryRelationship[reactions].observation ^comment = "with this entry an additional OID of (2.16.840.1.113883.10.20.1.54) SHALL be used, indicating that this problem is a reaction."

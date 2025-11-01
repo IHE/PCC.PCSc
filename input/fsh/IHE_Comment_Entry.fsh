@@ -56,7 +56,7 @@ Any condition or allergy may be the subject of a comment.
 * author.assignedAuthor.id MS
 * author.assignedAuthor.addr 1..* MS 
 * author.assignedAuthor.telecom 1..* MS 
-* author.assignedAuthorassignedPerson MS
-* author.assignedAuthorassignedPerson.name 1..* MS 
-* author.assignedAuthorrepresentedOrganization MS
-* author.assignedAuthorrepresentedOrganization.name 1..* MS 
+* author.assignedAuthor.assignedPerson MS
+* author.assignedAuthor.assignedPerson.name 1..* MS 
+* author.assignedAuthor.representedOrganization MS
+* author.assignedAuthor.representedOrganization.name 1..* MS 
