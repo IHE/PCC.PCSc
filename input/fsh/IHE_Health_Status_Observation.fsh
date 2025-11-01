@@ -23,11 +23,11 @@ A problem observation may reference a health status observation. This structure 
 * templateId ^slicing.rules = #open
 * templateId contains 
     prob-health-status-obs 1..1 and 
-    prob-health-status-obs 1..1
+    health-status-obs 1..1
 * templateId[prob-health-status-obs].root 1..1
 * templateId[prob-health-status-obs].root = "2.16.840.1.113883.10.20.1.51"
 * templateId[health-status-obs].root 1..1
-* templateId[health-status-obs].root = "	1.3.6.1.4.1.19376.1.5.3.1.4.1.2"
+* templateId[health-status-obs].root = "1.3.6.1.4.1.19376.1.5.3.1.4.1.2"
 
 * id 1..* MS 
 * id ^comment = "SHALL contain at least one [1..*] id (CONF:1098-32486)."
