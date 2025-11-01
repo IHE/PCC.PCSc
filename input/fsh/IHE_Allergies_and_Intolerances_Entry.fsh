@@ -5,7 +5,7 @@ Title: "IHE Allergies and Intolerances Entry"
 Description: """
 Allergies and intolerances are special kinds of problems, and so are also recorded in the CDA <observation> element, with classCode='OBS'. They follow the same pattern as the problem entry, with exceptions noted.
 
-TBD Still needs to be finished building
+TBD Still needs to be finished building Troubleshooting for comment needs to be done 
 """
 //* ^identifier.system = "urn:ietf:rfc:3986"
 //* ^identifier.value = "urn:hl7ii:2.16.840.1.113883.10.20.22.4.3:2024-05-01"
@@ -30,17 +30,17 @@ TBD Still needs to be finished building
 
 
 * entryRelationship contains 
-    reactions 0..* and 
-    comment 0..* 
+    reactions 0..* 
+//    comment 0..* 
 * entryRelationship[reactions].typeCode = #MFST (exactly)
 * entryRelationship[reactions].inversionInd = false (exactly)
 * entryRelationship[reactions].observation 1..1
 * entryRelationship[reactions].observation only IHE_PCC_Problem_Entry
 * entryRelationship[reactions].observation ^comment = "with this entry an additional OID of (2.16.840.1.113883.10.20.1.54) SHALL be used, indicating that this problem is a reaction."
 
-* entryRelationship[comment].typeCode = #SUBJ (exactly)
-* entryRelationship[comment].typeCode ^comment = "SHALL contain exactly one [1..1] @typeCode=\"REFR\" Refers to (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:1198-31531)."
-* entryRelationship[comment].inversionInd = true (exactly)
-* entryRelationship[comment].observation 1..1
-* entryRelationship[comment].observation only IHE_PCC_Comment_Entry
-* entryRelationship[comment].observation ^comment = "with this entry an additional OID of (2.16.840.1.113883.10.20.1.54) SHALL be used, indicating that this problem is a reaction."
+//* entryRelationship[comment].typeCode = #SUBJ (exactly)
+//* entryRelationship[comment].typeCode ^comment = "SHALL contain exactly one [1..1] @typeCode=\"REFR\" Refers to (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002) (CONF:1198-31531)."
+//* entryRelationship[comment].inversionInd = true (exactly)
+//* entryRelationship[comment].observation 1..1
+//* entryRelationship[comment].observation only IHE_PCC_Comment_Entry
+//* entryRelationship[comment].observation ^comment = "with this entry an additional OID of (2.16.840.1.113883.10.20.1.54) SHALL be used, indicating that this problem is a reaction."
