@@ -8,6 +8,7 @@ This event (moodCode='EVN') represents an act (<act classCode='ACT') of being co
 //* ^identifier.system = "urn:ietf:rfc:3986"
 //* ^identifier.value = "urn:hl7ii:2.16.840.1.113883.10.20.22.4.3:2024-05-01"
 * ^status = #draft
+* obeys should-text-ref-value and should-author
 
 * classCode = #ACT (exactly)
 * classCode ^comment = "SHALL contain exactly one [1..1] @classCode=\"ACT\" Act (CodeSystem: HL7ActClass urn:oid:2.16.840.1.113883.5.6 STATIC) (CONF:1198-9024)."
@@ -64,13 +65,23 @@ This event (moodCode='EVN') represents an act (<act classCode='ACT') of being co
 * entryRelationship ^slicing.discriminator[=].path = "observation"
 * entryRelationship ^slicing.rules = #open
 * entryRelationship ^short = "The following entryRelationships represent identifying problems of concern and providing more information about the concern."
-* entryRelationship contains problem-entry 1..* MS
+* entryRelationship contains 
+    problem-entry 0..* MS and 
+    allergies-and-ntolerances-entry 0..* MS
 * entryRelationship[problem-entry] ^comment = "SHALL contain exactly one [1..1] entryRelationship (CONF:1198-9034) such that it"
 * entryRelationship[problem-entry].typeCode = #SUBJ (exactly)
 * entryRelationship[problem-entry].typeCode ^comment = "SHALL contain exactly one [1..1] @typeCode=\"SUBJ\" Has subject (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:1198-9035)."
-* entryRelationship[severity-entry].inversionInd 1..
-* entryRelationship[severity-entry].inversionInd = false (exactly)
+* entryRelationship[problem-entry].inversionInd 1..
+* entryRelationship[problem-entry].inversionInd = false (exactly)
 * entryRelationship[problem-entry].observation 1..1
 * entryRelationship[problem-entry].observation only IHE_PCC_Problem_Entry
 
-* obeys should-text-ref-value and should-author
+* entryRelationship[allergies-and-ntolerances-entry] ^comment = "SHALL contain exactly one [1..1] entryRelationship (CONF:1198-9034) such that it"
+* entryRelationship[allergies-and-ntolerances-entry].typeCode = #SUBJ (exactly)
+* entryRelationship[allergies-and-ntolerances-entry].typeCode ^comment = "SHALL contain exactly one [1..1] @typeCode=\"SUBJ\" Has subject (CodeSystem: HL7ActRelationshipType urn:oid:2.16.840.1.113883.5.1002 STATIC) (CONF:1198-9035)."
+* entryRelationship[allergies-and-ntolerances-entry].inversionInd 1..
+* entryRelationship[allergies-and-ntolerances-entry].inversionInd = false (exactly)
+* entryRelationship[allergies-and-ntolerances-entry].observation 1..1
+* entryRelationship[allergies-and-ntolerances-entry].observation only IHE_Allergies_And_Intolerances_Entry
+
+
