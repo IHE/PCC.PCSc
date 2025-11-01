@@ -1,7 +1,3 @@
-Alias: $Observation = http://hl7.org/cda/stds/core/StructureDefinition/Observation
-Alias: $CD = http://hl7.org/cda/stds/core/StructureDefinition/CD
-Alias: $2.16.840.1.113883.3.88.12.80.68 = http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.88.12.80.68
-
 Profile: IHE_Problem_Status_Observation
 Parent: $Observation
 Id: IHE.Problem.Status.Observation
@@ -30,8 +26,8 @@ Any problem or allergy observation may reference a problem status observation. T
     ihe-problem-status-obs 1..1   
 * templateId[status-obs].root 1..1
 * templateId[status-obs].root = "2.16.840.1.113883.10.20.1.57"
-* templateId[severity-entry].root 1..1
-* templateId[severity-entry].root = "2.16.840.1.113883.10.20.1.50"
+* templateId[problem-status-obs].root 1..1
+* templateId[problem-status-obs].root = "2.16.840.1.113883.10.20.1.50"
 * templateId[ihe-problem-status-obs].root 1..1
 * templateId[ihe-problem-status-obs].root = "1.3.6.1.4.1.19376.1.5.3.1.4.1.1"
 

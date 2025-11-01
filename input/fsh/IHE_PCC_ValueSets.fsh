@@ -21,3 +21,17 @@ Id: ProblemStatusObservation.Value.VS
 * $sct#415684004    "Rule out"
 * $sct#410516002    "Ruled out"
 * $sct#413322009    "Resolved"
+
+ValueSet: HealthStatus_Value_VS
+Title: "Health Status Value"
+Description: "SNOMED CT Health Status codes."
+Id: HealthStatus.Value.VS
+* ^experimental = false
+* $sct#81323004   "Alive and well"
+* $sct#313386006    "In remission"
+* $sct#162467007    "Symptom free"
+* $sct#161901003    "Chronically ill"
+* $sct#271593001    "Severely ill"
+* $sct#21134002   "Disabled"
+* $sct#161045001    "Severely disabled"
+* $sct#419099009    "Deceased"
