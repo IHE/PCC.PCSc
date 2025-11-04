@@ -187,3 +187,9 @@ Description: "SHOULD contain @use"
 Invariant: should-country
 Description: "SHOULD contain country"
 * severity = #warning
+
+Invariant: 4537-6380
+Description: "If setId is present versionNumber **SHALL** be present (CONF:4537-6380)."
+* severity = #error
+* expression = "setId.exists() implies versionNumber.exists()"
+

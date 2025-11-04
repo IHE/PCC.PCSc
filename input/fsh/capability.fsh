@@ -14,7 +14,7 @@ Usage: #definition
 * format[+] = #application/fhir+xml
 * format[+] = #application/fhir+json
 * document[+].mode = #producer 
-* document[=].profile = Canonical(IHE_PCC_MedicalDocument)
+* document[=].profile = Canonical(IHE_PCC_MedicalDocument_CDA)
 
 Instance: IHE.PSCc.Content-Consumer
 InstanceOf: CapabilityStatement
@@ -32,4 +32,4 @@ Usage: #definition
 * format[+] = #application/fhir+xml
 * format[+] = #application/fhir+json
 * document[+].mode = #producer 
-* document[=].profile = Canonical(IHE_PCC_MedicalDocument)
+* document[=].profile = Canonical(IHE_PCC_MedicalDocument_CDA)

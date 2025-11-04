@@ -9,7 +9,7 @@ TBD- IF more modeled after CCDA AllergiesAndIntolerancesSection structure
 """
 * ^status = #draft
 * obeys shall-allergy-concern
-//* nullFlavor ^short = "If a required section contains no information, the @nullFlavor MAY be set to NI"
+* nullFlavor ^short = "If a required section contains no information, the @nullFlavor MAY be set to NI"
 
 
 * templateId ^slicing.discriminator[+].type = #value
@@ -34,10 +34,9 @@ TBD- IF more modeled after CCDA AllergiesAndIntolerancesSection structure
 
 * title 1..1
 * text 1..1
-* entry ^slicing.discriminator[1].type = #profile
+* entry ^slicing.discriminator[+].type = #profile
 * entry ^slicing.discriminator[=].path = "act"
 * entry ^slicing.rules = #open
-* entry ^short = "If section/@nullFlavor is not present:"
 * entry contains allergyConcern 1..* MS 
 * entry[allergyConcern] ^comment = "SHALL contain at least one [1..*] entry (CONF:1198-7531) such that it"
 * entry[allergyConcern].act 1..
