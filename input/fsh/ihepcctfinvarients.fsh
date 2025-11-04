@@ -50,6 +50,10 @@ Description: "If section/@nullFlavor is not present, SHOULD contain at least one
 * severity = #warning
 * expression = "nullFlavor.exists() or entry.where(act.hasTemplateIdOf('https://profiles.ihe.net/PCC/PSCc/StructureDefinition/IHE_PCC_CDA_Coverage_Entry')).exists()"
 
+Invariant: should-effectiveTime
+Description: "SHOULD contain effectiveTime"
+* severity = #warning
+* expression = "effectiveTime.exists()"
 
 //Invariant: ihe-ap-combo
 //Description: "This structuredBody **SHALL NOT** contain an Assessment and Plan Section (2.16.840.1.113883.10.20.22.2.9:2014-06-09) when either an Assessment Section (2.16.840.1.113883.10.20.22.2.8) or a Plan of Treatment Section (2.16.840.1.113883.10.20.22.2.10:2014-06-09) is present."
@@ -144,11 +148,6 @@ Invariant: should-playingEntity
 Description: "SHOULD contain playingEntity"
 * severity = #warning
 * expression = "playingEntity.exists()"
-
-Invariant: should-code-attr
-Description: "SHOULD contain @code"
-* severity = #warning
-* expression = "code.exists()"
 
 
 

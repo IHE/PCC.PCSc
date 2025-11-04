@@ -54,7 +54,6 @@ TBD if more
 * performer[payer] ^short = "This performer represents the Payer."
 * performer[payer] ^comment = "SHALL contain exactly one [1..1] performer (CONF:4537-8906) such that it"
 * performer[payer].typeCode 1..1
-* performer[payer].typeCode.code = #PRF
 * performer[payer].assignedEntity obeys should-code and should-representedOrganization
 * performer[payer].assignedEntity ^comment = "SHALL contain exactly one [1..1] assignedEntity (CONF:4537-8908)."
 * performer[payer].assignedEntity.classCode 1..1 MS 
@@ -67,7 +66,7 @@ TBD if more
 * performer[payer].assignedEntity.addr obeys should-country
 * performer[payer].assignedEntity.telecom.use 1..* MS 
 * performer[payer].assignedEntity.telecom obeys should-use
-* performer[payer].assignedEntity.representedOrganization.classCode 1.1 
+* performer[payer].assignedEntity.representedOrganization.classCode 1..1 
 * performer[payer].assignedEntity.representedOrganization obeys should-name
 * performer[payer].assignedEntity.representedOrganization ^comment = "This assignedEntity SHOULD contain zero or one [0..1] representedOrganization (CONF:4537-8912)."
 * performer[payer].assignedEntity.representedOrganization.name 1..1
