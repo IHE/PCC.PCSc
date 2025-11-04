@@ -23,10 +23,13 @@ This event (moodCode='EVN') represents an act (<act classCode='ACT') of being co
 * templateId ^slicing.discriminator[=].path = "extension"
 * templateId ^slicing.rules = #open
 * templateId contains 
-    problem-act 1..1 and 
+    problem 0..1 MS and 
+    allergies-and-intolerances 0..1 MS and 
     ihe-concern-entry 1..1 
-* templateId[problem-act].root 1..1
-* templateId[problem-act].root = "2.16.840.1.113883.10.20.1.27"
+* templateId[problem].root 1..1
+* templateId[problem].root = "2.16.840.1.113883.10.20.1.27"
+* templateId[allergies-and-intolerances].root 1..1
+* templateId[allergies-and-intolerances].root = "1.3.6.1.4.1.19376.1.5.3.1.4.6"
 * templateId[ihe-concern-entry].root 1..1
 * templateId[ihe-concern-entry].root = "1.3.6.1.4.1.19376.1.5.3.1.4.5.1"
 

@@ -20,10 +20,6 @@ TBD Still needs to be finished building Troubleshooting for comment needs to be 
 * participant.participantRole.classCode = #MANU
 * participant.participantRole.playingEntity.classCode = #MMAT
 
-* code 1..1 
-* code.code 1..1 MS 
-* code from ObservationIntoleranceType (preferred)
-
 * negationInd ^short = "Use negationInd=\"true\" to indicate that the allergy was not observed."
 * negationInd ^comment = "MAY contain zero or one [0..1] @negationInd (CONF:1098-31526)."
 
@@ -35,7 +31,7 @@ TBD Still needs to be finished building Troubleshooting for comment needs to be 
 * entryRelationship[reactions].typeCode = #MFST (exactly)
 * entryRelationship[reactions].inversionInd = false (exactly)
 * entryRelationship[reactions].observation 1..1
-* entryRelationship[reactions].observation only IHE_PCC_Problem_Entry
+* entryRelationship[reactions].observation only IHE_Problem_Reaction_Entry
 * entryRelationship[reactions].observation ^comment = "with this entry an additional OID of (2.16.840.1.113883.10.20.1.54) SHALL be used, indicating that this problem is a reaction."
 
 //* entryRelationship[comment].typeCode = #SUBJ (exactly)
@@ -44,3 +40,6 @@ TBD Still needs to be finished building Troubleshooting for comment needs to be 
 //* entryRelationship[comment].observation 1..1
 //* entryRelationship[comment].observation only IHE_PCC_Comment_Entry
 //* entryRelationship[comment].observation ^comment = "with this entry an additional OID of (2.16.840.1.113883.10.20.1.54) SHALL be used, indicating that this problem is a reaction."
+
+
+* value from from ObservationIntoleranceType (preferred)

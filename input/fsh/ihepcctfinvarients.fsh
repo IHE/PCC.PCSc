@@ -40,11 +40,10 @@ Description: "If realmCode is US, then the templateId SHALL be both 1.3.6.1.4.1.
 * expression = "realmCode.code.exists(value=#US) implies templateId.us-realm.root.exists(value = 2.16.840.1.113883.10.20.22.1.1)"
 //* xpath = "(/f:entry.reference and not /f:emptyReason) or (not(/f:emptyReason) and /f:entry.reference)"
 
-//Invariant: ihe-shall-problem-concern-act
-//Description: "If section/@nullFlavor is not present, SHALL contain at least one Problem Concern Act"
-//* severity = #error
-//* expression = "nullFlavor.exists() or entry.where(act.hasTemplateIdOf('http://hl7.org/cda/us/ccda/StructureDefinition/ProblemConcernAct')).exists()"
-//// NOte: remove comented out info when template id's have been updated 
+Invariant: ihe-shall-problem-concern-act
+Description: "If section/@nullFlavor is not present, SHALL contain at least one Problem Concern Entry"
+* severity = #error
+* expression = "nullFlavor.exists() or entry.where(act.hasTemplateIdOf('https://profiles.ihe.net/PCC/PSCc/StructureDefinition/IHE_Problem_Concern_Entry')).exists()"
 
 //Invariant: ihe-ap-combo
 //Description: "This structuredBody **SHALL NOT** contain an Assessment and Plan Section (2.16.840.1.113883.10.20.22.2.9:2014-06-09) when either an Assessment Section (2.16.840.1.113883.10.20.22.2.8) or a Plan of Treatment Section (2.16.840.1.113883.10.20.22.2.10:2014-06-09) is present."
