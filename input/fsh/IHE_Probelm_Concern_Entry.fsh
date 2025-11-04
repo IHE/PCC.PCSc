@@ -14,4 +14,4 @@ This entry is a specialization of the Concern Entry, wherein the subject of the 
 * templateId[ihe-prob-concern-entry].root 1..1
 * templateId[ihe-prob-concern-entry].root = "1.3.6.1.4.1.19376.1.5.3.1.4.5.2"
 
-* entryRelationship[problem] 1..* 
+* entryRelationship[problem-entry] 1..* 

@@ -42,4 +42,4 @@ TBD Still needs to be finished building Troubleshooting for comment needs to be 
 //* entryRelationship[comment].observation ^comment = "with this entry an additional OID of (2.16.840.1.113883.10.20.1.54) SHALL be used, indicating that this problem is a reaction."
 
 
-* value from from ObservationIntoleranceType (preferred)
+* value from ObservationIntoleranceType (preferred)

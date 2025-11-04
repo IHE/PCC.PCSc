@@ -47,7 +47,6 @@ TBD for more
 * id ^comment = "SHALL contain at least one [1..*] id (CONF:1198-9043)."
 
 * code MS 
-* code = $loinc#48767-8
 * code ^comment = "The <code> describes the process of establishing a problem. The code element should be used, as the process of determining the value is important to clinicians (e.g., a diagnosis is a more advanced statement than a symptom). When a physical exam observation is being recorded the code used should be “Finding.” When a review of systems observation is being recorded the code used should be “Symptom.” The recommended vocabulary for describing problems is shown in the table below. Subclasses of this content module may specify other vocabularies. When the list below is used, the codeSystem is '2.16.840.1.113883.6.96' and codeSystemName is SNOMED CT."
 //* code from $2.16.840.1.113762.1.4.1267.1 (preferred)
 // do i need to make a vlaue set for the code reference to indicate that SNOMEDCT may be used aswell or is this just a comment?
