@@ -193,3 +193,77 @@ Description: "If setId is present versionNumber **SHALL** be present (CONF:4537-
 * severity = #error
 * expression = "setId.exists() implies versionNumber.exists()"
 
+Invariant: 4537-21000
+Description: "If sdtc:deceasedTime/@value is present, then sdtc:deceasedInd SHALL be present with value=true"
+* severity = #error
+* expression = "sdtcDeceasedTime.value.exists() implies sdtcDeceasedInd.exists(value='true')"
+
+Invariant: should-maritalStatusCode
+Description: "SHOULD contain maritalStatusCode"
+* severity = #warning
+* expression = "maritalStatusCode.exists()"
+
+Invariant: should-us-languageCommunication
+Description: "SHOULD contain languageCommunication"
+* severity = #warning
+* expression = "languageCommunication.exists()"
+
+Invariant: ts-shall-year
+Description: "**SHALL** be precise to at least the year"
+* severity = #error
+* expression = "nullFlavor.exists() or value.toString().length() >= 4"
+
+Invariant: ts-should-day
+Description: "**SHOULD** be precise to at least the day"
+* severity = #warning
+* expression = "nullFlavor.exists() or value.toString().length() >= 10"
+
+Invariant: should-value-att
+Description: "SHOULD contain @value"
+* severity = #warning
+* expression = "value.exists()"
+
+Invariant: should-us-code
+Description: "SHOULD contain code"
+* severity = #warning
+* expression = "code.exists()"
+
+Invariant: should-us-addr
+Description: "SHOULD contain addr"
+* severity = #warning
+* expression = "addr.exists()"
+
+Invariant: should-us-telecom
+Description: "SHOULD contain telecom"
+* severity = #warning
+* expression = "telecom.exists()"
+
+Invariant: should-proficiencyLevelCode
+Description: "SHOULD contain proficiencyLevelCode"
+* severity = #warning
+* expression = "proficiencyLevelCode.exists()"
+
+Invariant: should-preferenceInd
+Description: "SHOULD contain preferenceInd"
+* severity = #warning
+* expression = "preferenceInd.exists()"
+
+Invariant: 4537-16790
+Description: "There **SHALL** be exactly one assignedAuthor/assignedPerson or exactly one assignedAuthor/assignedAuthoringDevice (CONF:4537-16790)."
+* severity = #error
+* expression = "(assignedPerson | assignedAuthoringDevice).count() = 1"
+
+Invariant: 4537-10006
+Description: "**SHALL** contain associatedEntity/associatedPerson *AND/OR* associatedEntity/scopingOrganization (CONF:4537-10006)."
+* severity = #error
+* expression = "associatedEntity.associatedPerson.exists() or associatedEntity.scopingOrganization.exists()"
+
+Invariant: 1198-8348
+Description: "The responsibleParty element, if present, **SHALL** contain an assignedEntity element, which **SHALL** contain an assignedPerson element, a representedOrganization element, or both (CONF:1198-8348)."
+* severity = #error
+* expression = "assignedEntity.assignedPerson.exists() or assignedEntity.representedOrganization.exists()"
+
+Invariant: 1198-32905
+Description: "This assignedEntity SHALL contain an assignedPerson or a representedOrganization or both (CONF:1198-32905)."
+* severity = #error
+* expression = "assignedPerson.exists() or representedOrganization.exists()"

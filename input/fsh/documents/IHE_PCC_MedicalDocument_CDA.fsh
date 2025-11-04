@@ -139,13 +139,13 @@ This Structure Definition defines the base set of constraints used by almost all
 
 * recordTarget.patientRole.patient.birthplace ^comment = "This patient MAY contain zero or one [0..1] birthplace (CONF:4537-5395)."
 * recordTarget.patientRole.patient.birthplace.place ^comment = "The birthplace, if present, SHALL contain exactly one [1..1] place (CONF:4537-5396)."
-* recordTarget.patientRole.patient.birthplace.place.addr 1..* MS 
+* recordTarget.patientRole.patient.birthplace.place.addr 1..1 MS 
 * recordTarget.patientRole.patient.birthplace.place.addr obeys should-country
 * recordTarget.patientRole.patient.birthplace.place.addr ^comment = "This place SHALL contain exactly one [1..1] addr (CONF:4537-5397)."
 * recordTarget.patientRole.patient.birthplace.place.addr.item.country from Country2 (required)
 * recordTarget.patientRole.patient.languageCommunication MS 
 * recordTarget.patientRole.patient.languageCommunication obeys should-proficiencyLevelCode and should-preferenceInd
-* recordTarget.patientRole.patient.languageCommunication.languageCode 1..* MS
+* recordTarget.patientRole.patient.languageCommunication.languageCode 1..1 MS
 * recordTarget.patientRole.patient.languageCommunication.languageCode from Languages (required)
 
 * recordTarget.patientRole.providerOrganization ^comment = "This patientRole MAY contain zero or one [0..1] providerOrganization (CONF:4537-5416)."
@@ -235,7 +235,7 @@ This Structure Definition defines the base set of constraints used by almost all
 * informant[provider].assignedEntity ^comment = "SHALL contain exactly one [1..1] assignedEntity (CONF:4537-8002)."
 * informant[provider].assignedEntity.id ^short = "If assignedEntity/id is a provider then this id, **SHOULD** include zero or one [0..1] id where id/@root =\"2.16.840.1.113883.4.6\" National Provider Identifier (CONF:4537-9946)."
 * informant[provider].assignedEntity.id ^comment = "This assignedEntity SHALL contain at least one [1..*] id (CONF:4537-9945)."
-* informant[provider].assignedEntity.code from HealthcareProviderTaxonomyHIPAA (example)
+* informant[provider].assignedEntity.code from NUCCProviderCodes (example)
 * informant[provider].assignedEntity.addr 1..* MS 
 * informant[provider].assignedEntity.addr obeys should-country
 * informant[provider].assignedEntity.assignedPerson 1..1 MS 
@@ -245,7 +245,7 @@ This Structure Definition defines the base set of constraints used by almost all
 * informant[provider].relatedEntity 0..0 
 * informant[non-provider] ^short = "The informant element describes an information source (who is not a provider) for any content within the clinical document. This informant would be used when the source of information has a personal relationship with the patient or is the patient."
 * informant[non-provider].assignedEntity 0..0
-* informant[non-provider].relatedEntity 1..* MS 
+* informant[non-provider].relatedEntity 1..1 MS 
 * informant[non-provider].relatedEntity ^comment = "SHALL contain exactly one [1..1] relatedEntity (CONF:4537-31356)."
 
 * custodian MS 
@@ -346,7 +346,7 @@ This Structure Definition defines the base set of constraints used by almost all
 * documentationOf.serviceEvent.performer.functionCode MS 
 * documentationOf.serviceEvent.performer.functionCode obeys should-code-attr
 * documentationOf.serviceEvent.performer.functionCode ^comment = "The performer, if present, MAY contain zero or one [0..1] functionCode (CONF:4537-16818)."
-* documentationOf.serviceEvent.performer.time only MS 
+* documentationOf.serviceEvent.performer.time MS 
 * documentationOf.serviceEvent.performer.assignedEntity obeys should-us-code
 * documentationOf.serviceEvent.performer.assignedEntity ^comment = "The performer, if present, SHALL contain exactly one [1..1] assignedEntity (CONF:4537-14841)."
 * documentationOf.serviceEvent.performer.assignedEntity.id ^comment = "This assignedEntity SHALL contain at least one [1..*] id (CONF:4537-14846)."
