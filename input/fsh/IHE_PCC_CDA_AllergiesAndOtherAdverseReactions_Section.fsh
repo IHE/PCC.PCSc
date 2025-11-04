@@ -1,6 +1,3 @@
-Alias: $Section = http://hl7.org/cda/stds/core/StructureDefinition/Section
-Alias: $AllergyConcernAct = http://hl7.org/cda/us/ccda/StructureDefinition/AllergyConcernAct
-
 Profile: IHE_PCC_CDA_AllergiesAndOtherAdverseReactions_Section
 Parent: $Section
 Id: IHE.PCC.CDA.AllergiesAndOtherAdverseReactions.Section

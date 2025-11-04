@@ -50,6 +50,11 @@ Description: "If section/@nullFlavor is not present, SHOULD contain at least one
 * severity = #warning
 * expression = "nullFlavor.exists() or entry.where(act.hasTemplateIdOf('https://profiles.ihe.net/PCC/PSCc/StructureDefinition/IHE_PCC_CDA_Coverage_Entry')).exists()"
 
+Invariant: shall-allergy-concern
+Description: "If section/@nullFlavor is not present, SHALL contain at least one Allergy Concern Act"
+* severity = #error
+* expression = "nullFlavor.exists() or entry.where(act.hasTemplateIdOf('https://profiles.ihe.net/PCC/PSCc/StructureDefinition/IHE_Allergies_And_Intolerances_Concern_Entry')).exists()"
+
 Invariant: should-effectiveTime
 Description: "SHOULD contain effectiveTime"
 * severity = #warning
@@ -150,10 +155,7 @@ Description: "SHOULD contain playingEntity"
 * expression = "playingEntity.exists()"
 
 
-Invariant: shall-allergy-concern
-Description: "If section/@nullFlavor is not present, SHALL contain at least one Allergy Concern Act"
-* severity = #error
-* expression = "nullFlavor.exists() or entry.where(act.hasTemplateIdOf('http://hl7.org/cda/us/ccda/StructureDefinition/AllergyConcernAct')).exists()"
+
 
 // 81-7278
 
