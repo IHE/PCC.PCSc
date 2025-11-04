@@ -267,3 +267,18 @@ Invariant: 1198-32905
 Description: "This assignedEntity SHALL contain an assignedPerson or a representedOrganization or both (CONF:1198-32905)."
 * severity = #error
 * expression = "assignedPerson.exists() or representedOrganization.exists()"
+
+Invariant: 4537-32993
+Description: "If sdtc:deceasedInd=\"true\", then sdtc:deceasedTime **SHALL** be present with either a @value or @nullFlavor=UNK (CONF:4537-32993)."
+* severity = #error
+* expression = "sdtcDeceasedInd.exists(value='true') implies sdtcDeceasedTime.exists()"
+
+Invariant: should-responsibleParty
+Description: "SHOULD contain responsibleParty"
+* severity = #warning
+* expression = "responsibleParty.exists()"
+
+Invariant: should-us-performer
+Description: "SHOULD contain performer"
+* severity = #warning
+* expression = "performer.exists()"
