@@ -45,6 +45,12 @@ Description: "If section/@nullFlavor is not present, SHALL contain at least one 
 * severity = #error
 * expression = "nullFlavor.exists() or entry.where(act.hasTemplateIdOf('https://profiles.ihe.net/PCC/PSCc/StructureDefinition/IHE_Problem_Concern_Entry')).exists()"
 
+Invariant: ihe-should-coverage-entry
+Description: "If section/@nullFlavor is not present, SHOULD contain at least one Coverage Entry"
+* severity = #warning
+* expression = "nullFlavor.exists() or entry.where(act.hasTemplateIdOf('https://profiles.ihe.net/PCC/PSCc/StructureDefinition/IHE_PCC_CDA_Coverage_Entry')).exists()"
+
+
 //Invariant: ihe-ap-combo
 //Description: "This structuredBody **SHALL NOT** contain an Assessment and Plan Section (2.16.840.1.113883.10.20.22.2.9:2014-06-09) when either an Assessment Section (2.16.840.1.113883.10.20.22.2.8) or a Plan of Treatment Section (2.16.840.1.113883.10.20.22.2.10:2014-06-09) is present."
 //* severity = #error
@@ -83,6 +89,67 @@ Invariant: should-author
 Description: "SHOULD contain author"
 * severity = #warning
 * expression = "author.exists()"
+
+Invariant: 4537-17139
+Description: "When the Subscriber is the patient (COV participant code = 'SELF'), the participant element describing the subscriber **SHALL NOT** be present. This information will be recorded instead in the data elements used to record member information (CONF:4537-17139)."
+* severity = #error
+* expression = "participant.where(typeCode='COV').participantRole.code.where(code = 'SELF').exists() implies participant.where(typeCode='HLD').empty()"
+
+Invariant: should-code
+Description: "SHOULD contain code"
+* severity = #warning
+* expression = "code.exists()"
+
+Invariant: should-representedOrganization
+Description: "SHOULD contain representedOrganization"
+* severity = #warning
+* expression = "representedOrganization.exists()"
+
+Invariant: should-name
+Description: "SHOULD contain name"
+* severity = #warning
+* expression = "name.exists()"
+
+Invariant: should-time
+Description: "SHOULD contain time"
+* severity = #warning
+* expression = "time.exists()"
+
+Invariant: 4537-8967
+Description: "**SHOULD** include assignedEntity/assignedPerson/name AND/OR assignedEntity/representedOrganization/name (CONF:4537-8967)."
+* severity = #warning
+* expression = "assignedPerson.name.exists() or representedOrganization.name.exists()"
+
+Invariant: should-addr
+Description: "SHOULD contain addr"
+* severity = #warning
+* expression = "addr.exists()"
+
+Invariant: should-telecom
+Description: "SHOULD contain telecom"
+* severity = #warning
+* expression = "telecom.exists()"
+
+Invariant: should-low
+Description: "SHOULD contain low"
+* severity = #warning
+* expression = "low.exists()"
+
+Invariant: should-high
+Description: "SHOULD contain high"
+* severity = #warning
+* expression = "high.exists()"
+
+Invariant: should-playingEntity
+Description: "SHOULD contain playingEntity"
+* severity = #warning
+* expression = "playingEntity.exists()"
+
+Invariant: should-code-attr
+Description: "SHOULD contain @code"
+* severity = #warning
+* expression = "code.exists()"
+
 
 
 // 81-7278

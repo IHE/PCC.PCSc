@@ -35,3 +35,14 @@ Id: HealthStatus.Value.VS
 * $sct#21134002   "Disabled"
 * $sct#161045001    "Severely disabled"
 * $sct#419099009    "Deceased"
+
+
+ValueSet:  Payer_Role_Codes_VS
+Title: "Payer Role Codes"
+Description: "TBD... "
+Id:  Payer.Role.Codes.VS
+* ^experimental = false
+
+* include codes from valueset http://terminology.hl7.org/ValueSet/v3-RoleCode
+* include codes from system http://terminology.hl7.org/CodeSystem/ib 
+* include codes from system http://snomed.info/sct  
