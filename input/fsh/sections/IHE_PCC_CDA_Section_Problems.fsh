@@ -18,10 +18,10 @@ The active problem section shall contain a narrative description of the conditio
 * templateId ^slicing.discriminator[=].path = "extension"
 * templateId ^slicing.rules = #open
 * templateId contains 
-    astm-ection 1..1 MS and 
+    astm-parent 1..1 MS and 
     activeProblemsSection 1..1 MS
-* templateId[astm-section].root 1..1 MS 
-* templateId[astm-section].root = "2.16.840.1.113883.10.20.1.11"
+* templateId[astm-parent].root 1..1 MS 
+* templateId[astm-parent].root = "2.16.840.1.113883.10.20.1.11"
 * templateId[activeProblemsSection].root 1..1 MS 
 * templateId[activeProblemsSection].root = ".3.6.1.4.1.19376.1.5.3.1.3.6"
 

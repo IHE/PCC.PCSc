@@ -154,8 +154,36 @@ Description: "SHOULD contain playingEntity"
 * severity = #warning
 * expression = "playingEntity.exists()"
 
+Invariant: 4537-6387
+Description: "If versionNumber is present setId **SHALL** be present (CONF:4537-6387)."
+* severity = #error
+* expression = "versionNumber.exists() implies setId.exists()"
 
+Invariant: should-legalAuthenticator
+Description: "SHOULD contain legalAuthenticator"
+* severity = #warning
+* expression = "legalAuthenticator.exists()"
 
+Invariant: should-relatedParticipant
+Description: "Documents SHOULD contain a RelatedPerson participant"
+* severity = #warning
+* expression = "AssociatedEntity.associatedPerson.exists()"
 
-// 81-7278
+Invariant: should-sdtcCategory
+Description: "SHOULD contain sdtcCategory"
+* severity = #warning
+* expression = "sdtcCategory.exists()"
 
+Invariant: should-code-attr
+Description: "SHOULD contain @code"
+* severity = #warning
+* expression = "code.exists()"
+
+Invariant: should-use
+Description: "SHOULD contain @use"
+* severity = #warning
+* expression = "nullFlavor.exists() or use.exists()"
+
+Invariant: should-country
+Description: "SHOULD contain country"
+* severity = #warning

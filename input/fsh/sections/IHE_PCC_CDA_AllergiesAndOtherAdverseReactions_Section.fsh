@@ -9,7 +9,7 @@ TBD- IF more modeled after CCDA AllergiesAndIntolerancesSection structure
 """
 * ^status = #draft
 * obeys shall-allergy-concern
-* nullFlavor ^short = "If a required section contains no information, the @nullFlavor MAY be set to NI"
+//* nullFlavor ^short = "If a required section contains no information, the @nullFlavor MAY be set to NI"
 
 
 * templateId ^slicing.discriminator[+].type = #value
