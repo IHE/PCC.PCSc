@@ -44,7 +44,7 @@ This Structure Definition defines the base set of constraints used by almost all
 
 * id MS 
 * id ^short = "**SHALL** be a globally unique identifier for the document (CONF:4537-9991)."
-* id ^comment = "SHALL contain exactly one [1..1] id (CONF:4537-5363). The uniqueId can be formatted using the following XPath expression, where $docID in the expression below represents the identifier. concat($docID/@root," $docID/@extension)" 
+* id ^comment = "SHALL contain exactly one [1..1] id (CONF:4537-5363). The uniqueId can be formatted using the following XPath expression, where $docID in the expression below represents the identifier. concat($docID/@root, $docID/@extension)" 
 
 * code ^short = "**SHALL** specify the particular kind of document (e.g., History and Physical, Discharge Summary, Progress Note) (CONF:4537-9992)."
 * code ^comment = "SHALL contain exactly one [1..1] code (CONF:4537-5253)."
