@@ -150,6 +150,10 @@ Description: "SHOULD contain playingEntity"
 * expression = "playingEntity.exists()"
 
 
+Invariant: shall-allergy-concern
+Description: "If section/@nullFlavor is not present, SHALL contain at least one Allergy Concern Act"
+* severity = #error
+* expression = "nullFlavor.exists() or entry.where(act.hasTemplateIdOf('http://hl7.org/cda/us/ccda/StructureDefinition/AllergyConcernAct')).exists()"
 
 // 81-7278
 

@@ -120,7 +120,7 @@ TBD if more
 * participant[member].participantRole.addr 1..1 MS 
 * participant[member].participantRole.addr obeys should-country
 * participant[member].participantRole.telecom obeys should-use
-* participant[member].participantRole.telecomuse 1..* MS 
+* participant[member].participantRole.telecom.use 1..* MS 
 * participant[member].participantRole.playingEntity ^short = "This playingEntity records the covered party name and birthTime as represented by the health plan. This could match the information in recordTarget, or be different due to marriage or other reasons."
 * participant[member].participantRole.playingEntity ^comment = "This participantRole SHOULD contain zero or one [0..1] playingEntity (CONF:4537-8932)."
 * participant[member].participantRole.playingEntity.name 1..1
@@ -139,7 +139,7 @@ TBD if more
 * participant[subscriber].participantRole.addr 1..1
 * participant[subscriber].participantRole.addr obeys should-country
 * participant[subscriber].participantRole.telecom obeys should-use
-* participant[subscriber].participantRole.telecomuse 1..* MS 
+* participant[subscriber].participantRole.telecom.use 1..* MS 
 
 * entryRelationship ^slicing.discriminator[+].type = #value
 * entryRelationship ^slicing.discriminator[=].path = "act.moodCode"
